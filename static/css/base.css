@@ -1,0 +1,29 @@
+/** Colours **/
+
+.purple {
+    background-color:#5f2d91;
+    color:#5f2d91;
+}
+
+.purple-text {
+    color:#5f2d91;
+}
+
+/* from Bulma, to ensure FA icons to remain centered and perfectly sized */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+
+
+/** navbar **/
+
+.logo-font {
+
+    text-decoration: none;
+    color:white;
+}
