@@ -72,6 +72,9 @@
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
+                        <li class="list-inline-item dropdown">
+                        <a href="{% url 'products' %}">products</a>
+                        </li>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
