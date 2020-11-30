@@ -9,6 +9,13 @@
     color:#5f2d91;
 }
 
+.light-beige {
+    background-color: #fbf3e4;
+}
+.beige {
+    background-color: #53513c;
+}
+
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */
 .icon {
     align-items: center;

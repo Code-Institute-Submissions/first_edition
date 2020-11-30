@@ -1,0 +1,533 @@
+[
+    {
+        "pk":1,
+        "model":"products.product",
+        "fields":{
+            "isbn":"747584664",
+            "name":"Harry Potter and the Half-Blood Prince",
+            "author":"J.K. Rowling",
+            "num_pages":652,
+            "description":"When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter, his wand hand is blackened and shrivelled, but he does not reveal why. Secrets and suspicion are spreading through the wizarding world, and Hogwarts itself is not safe. Harry is convinced that Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny",
+            "book_format":"Hardback",
+            "price":18.05,
+            "category":5,
+            "rating":4.51,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855706.jpg",
+            "image":"Harry-Potter-and-the-Half-Blood-Prince.jpg"
+        }
+    },
+
+    {
+        "pk":2,
+        "model":"products.product",
+        "fields":{
+            "isbn":"439358078",
+            "name":"Harry Potter and the Order of the Phoenix",
+            "author":"J.K. Rowling",
+            "num_pages":870,
+            "description":"Dark times have come to Hogwarts. After the Dementors' attack on his cousin Dudley, Harry Potter knows that Voldemort will stop at nothing to find him. There are many who deny the Dark Lord's return, but Harry is not alone: a secret order gathers at Grimmauld Place to fight against the Dark forces. Harry must allow Professor Snape to teach him how to protect himself from Voldemort's savage assaults on his mind. But they are growing stronger by the day and Harry is running out of time.",
+            "book_format":"Hardback",
+            "price":19.06,
+            "category":5,
+            "rating":4.52,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855690.jpg",
+            "image":"Harry-Potter-and-the-Order-of-the-Phoenix.jpg"
+        }
+    },
+
+    {
+        "pk":3,
+        "model":"products.product",
+        "fields":{
+            "isbn":"786222727",
+            "name":"Harry Potter and the Philosophers Stone",
+            "author":"J.K. Rowling",
+            "num_pages":223,
+            "description":"Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him.",
+            "book_format":"Hardback",
+            "price":14.44,
+            "category":5,
+            "rating":4.55,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408845646.jpg",
+            "image":"Harry-Potter-and-the-Philosophers-Stone.jpg"
+        }
+    },
+
+    {
+        "pk":4,
+        "model":"products.product",
+        "fields":{
+            "isbn":"043965548X",
+            "name":"Harry Potter and the Prisoner of Azkaban",
+            "author":"J.K. Rowling",
+            "num_pages":435,
+            "description":"When the Knight Bus crashes through the darkness and screeches to a halt in front of him, it's the start of another far from ordinary year at Hogwarts for Harry Potter. Sirius Black, escaped mass-murderer and follower of Lord Voldemort, is on the run - and they say he is coming after Harry. In his first ever Divination class, Professor Trelawney sees an omen of death in Harry's tea leaves . But perhaps most terrifying of all are the Dementors patrolling the school grounds, with their soul-sucking kiss.",
+            "book_format":"Hardback",
+            "price":14.91,
+            "category":5,
+            "rating":4.55,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855676.jpg",
+            "image":"Harry-Potter-and-the-Prisoner-of-Azkaban.jpg"
+        }
+    },
+
+    {
+        "pk":5,
+        "model":"products.product",
+        "fields":{
+            "isbn":"439064864",
+            "name":"Harry Potter and the Chamber of Secrets",
+            "author":"J.K. Rowling",
+            "num_pages":341,
+            "description":"Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft and Wizardry for his second year, Harry hears strange whispers echo through empty corridors - and then the attacks start. Students are found as though turned to stone . Dobby's sinister predictions seem to be coming true.",
+            "book_format":"Hardback",
+            "price":31.27,
+            "category":5,
+            "rating":4.57,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408845653.jpg",
+            "image":"Harry-Potter-and-the-Chamber-of-Secrets.jpg"
+        }
+    },
+
+    {
+        "pk":6,
+        "model":"products.product",
+        "fields":{
+            "isbn":"074754624X",
+            "name":"Harry Potter and the Goblet of Fire",
+            "author":"J.K. Rowling",
+            "num_pages":636,
+            "description":"The Triwizard Tournament is to be held at Hogwarts. Only wizards who are over seventeen are allowed to enter - but that doesn't stop Harry dreaming that he will win the competition. Then at Hallowe'en, when the Goblet of Fire makes its selection, Harry is amazed to find his name is one of those that the magical cup picks out. He will face death-defying tasks, dragons and Dark wizards, but with the help of his best friends, Ron and Hermione, he might just make it through - alive!",
+            "book_format":"Paperback",
+            "price":10.75,
+            "category":5,
+            "rating":4.51,
+            "publisher":"Scholastic Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855683.jpg",
+            "image":"Harry-Potter-and-the-Goblet-of-Fire.jpg"
+        }
+    },
+
+    {
+        "pk":7,
+        "model":"products.product",
+        "fields":{
+            "isbn":"140449337",
+            "name":"Meditations",
+            "author":"Aurelius Marcus",
+            "num_pages":303,
+            "description":"Meditations is a series of personal journals written by Marcus Aurelius, Emperor of Rome from 169 to 180 AD. The last of the “Five Good Emperors,” he was the most powerful and influential man in the Western world at the time. Marcus was one of the leaders of Stoicism, a philosophy of personal ethics which sought resilience and virtue through personal action and responsibility. Stoicism, viewed as a foundation of modern self-help, has inspired many personal development and psychotherapy approaches through to the present day.",
+            "book_format":"Hardback",
+            "price":6.50,
+            "category":3,
+            "rating":4.21,
+            "publisher":"Penguin Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/5455/9781545565674.jpg",
+            "image":"meditations.jpg"
+        }
+    },
+
+    {
+        "pk":8,
+        "model":"products.product",
+        "fields":{
+            "isbn":"1564780619",
+            "name":"Letters from a Stoic",
+            "author":"Seneca",
+            "num_pages":207,
+            "description":"For several years of his turbulent life, in which he was dogged by ill health, exile and danger, Seneca was the guiding hand of the Roman Empire. This selection of Seneca's letters shows him upholding the ideals of Stoicism - the wisdom of the self-possessed person immune to life's setbacks - while valuing friendship and courage, and criticizing the harsh treatment of slaves and the cruelties in the gladiatorial arena. The humanity and wit revealed in Seneca's interpretation of Stoicism is a moving and inspiring declaration of the dignity of the individual mind.",
+            "book_format":"Paperback",
+            "price":11.00,
+            "category":3,
+            "rating":3.80,
+            "publisher":"Penguin Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1404/9780140442106.jpg",
+            "image":"letters-from-a-stoic.jpg"
+        }
+    },
+
+    {
+        "pk":9,
+        "model":"products.product",
+        "fields":{
+            "isbn":"374530718",
+            "name":"Sophie's World",
+            "author":"Jostein Gaarder",
+            "num_pages":518,
+            "description":"When 14-year-old Sophie encounters a mysterious mentor who introduces her to philosophy, mysteries deepen in her own life. Why does she keep getting postcards addressed to another girl? Who is the other girl? And who, for that matter, is Sophie herself? To solve the riddle, she uses her new knowledge of philosophy, but the truth is far stranger than she could have imagined.",
+            "book_format":"Paperback",
+            "price":5.50,
+            "category":3,
+            "rating":3.92,
+            "publisher":"Farrar  Straus and Giroux",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4746/9781474602280.jpg",
+            "image":"sophies-world.jpg"
+        }
+    },
+
+    {
+        "pk":10,
+        "model":"products.product",
+        "fields":{
+            "isbn":"872207366",
+            "name":"Republic",
+            "author":"Plato",
+            "num_pages":358,
+            "description":"Plato's Republic is widely acknowledged as one of the most influential works in the history of philosophy. Presented in the form of a dialogue between Socrates and three different interlocutors, it is an inquiry into the notion of a perfect community and the ideal individual within it. During the conversation other questions are raised: what is goodness; what is reality; what is knowledge; what is the purpose of education? With remarkable lucidity and deft use of allegory, Plato arrives at a depiction of a state bound by harmony and ruled by 'philosopher kings'.",
+            "book_format":"Paperback",
+            "price":2.81,
+            "category":3,
+            "rating":3.94,
+            "publisher":"Hackett Publishing Company  Inc.",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199535767.jpg",
+            "image":"republic.jpg"
+        }
+    },
+
+    {
+        "pk":11,
+        "model":"products.product",
+        "fields":{
+            "isbn":"014044923X",
+            "name":"Beyond Good and Evil",
+            "author":"Friedrich Nietzsche",
+            "num_pages":240,
+            "description":"The title of this work refers to the need for modern philosophy to move beyond the traditional assessments and recommendations regarding moral actions. Nietzsche offers instead a new perspective whereby modern persons can assess ethics and the ethical systems that underlie them. At the same time he also accuses prior ethical systems of accepting basic assumptions about morality without rigor, taking them to task for lazy and wishful philosophies. The ideas in Beyond Good and Evil should be examined by anyone who has an interest in ethics, and they are essential reading for those who would learn about meta-ethics. Even when readers may find Nietzsche to be wrong in their estimate, this work still casts light onto areas that seldom otherwise get examined.",
+            "book_format":"Paperback",
+            "price":7.05,
+            "category":3,
+            "rating":4.10,
+            "publisher":"Penguin Classics",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199537075.jpg",
+            "image":"Beyond-Good-and-Evil.jpg"
+        }
+    },
+
+    {
+        "pk":12,
+        "model":"products.product",
+        "fields":{
+            "isbn":"1400033721",
+            "name":"Parallel Worlds",
+            "author":"Michio Kaku",
+            "num_pages":361,
+            "description":"Imagine a future where we are not alone - where our universe is just one of countless parallel worlds, some strangely familiar, some almost unimaginable. And that, when planet earth finally runs down to a cold, dark wasteland, we will be able to escape into these new worlds and start again. Michio Kaku's thrilling guide to the galaxy shows us how it could happen sooner than we think - and the future for intelligent life is one of endless possibilities",
+            "book_format":"Paperback",
+            "price":11.44,
+            "category":1,
+            "rating":4.18,
+            "publisher":"Anchor",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141014630.jpg",
+            "image":"Parallel-Worlds.jpg"
+        }
+    },
+
+    {
+        "pk":13,
+        "model":"products.product",
+        "fields":{
+            "isbn":"393061310",
+            "name":"Guns  Germs and Steel: The Fates of Human Societies",
+            "author":"Jared Diamond",
+            "num_pages":518,
+            "description":"The book attempts to explain why Eurasian and North African civilizations have survived and conquered others, while arguing against the idea that Eurasian hegemony is due to any form of Eurasian intellectual, moral, or inherent genetic superiority. Diamond argues that the gaps in power and technology between human societies originate primarily in environmental differences, which are amplified by various positive feedback loops. When cultural or genetic differences have favored Eurasians (for example, written language or the development among Eurasians of resistance to endemic diseases), he asserts that these advantages occurred because of the influence of geography on societies and cultures (for example, by facilitating commerce and trade between different cultures) and were not inherent in the Eurasian genomes.",
+            "book_format":"Paperback",
+            "price":13.17,
+            "category":1,
+            "rating":4.03,
+            "publisher":"W.W. Norton",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0993/9780099302780.jpg",
+            "image":"Guns-Germs-and-Steel-The-Fates-of-Human-Societies.jpg"
+        }
+    },
+
+    {
+        "pk":14,
+        "model":"products.product",
+        "fields":{
+            "isbn":"140449086",
+            "name":"The Histories",
+            "author":"Herodotus",
+            "num_pages":716,
+            "description":"One of the masterpieces of classical literature, The Histories describes how a small and quarrelsome band of Greek city states united to repel the might of the Persian empire. But while this epic struggle forms the core of his work, Herodotus' natural curiosity frequently gives rise to colourful digressions - a description of the natural wonders of Egypt; tales of lake-dwellers, dog-headed men and gold-digging ants. ",
+            "book_format":"Paperback",
+            "price":12.75,
+            "category":1,
+            "rating":3.99,
+            "publisher":"Penguin Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1404/9780140449082.jpg",
+            "image":"The-Histories.jpg"
+        }
+    },
+
+    {
+        "pk":15,
+        "model":"products.product",
+        "fields":{
+            "isbn":"076790818X",
+            "name":"A Short History of Nearly Everything",
+            "author":"Bill Bryson",
+            "num_pages":544,
+            "description":"Bill Bryson describes himself as a reluctant traveller, but even when he stays safely at home he can't contain his curiosity about the world around him. A Short History of Nearly Everything is his quest to understand everything that has happened from the Big Bang to the rise of civilization - how we got from there, being nothing at all, to here, being us. Bill Bryson's challenge is to take subjects that normally bore the pants off most of us, like geology, chemistry and particle physics, and see if there isn't some way to render them comprehensible to people who have never thought they could be interested in science.",
+            "book_format":"Hardback",
+            "price":10.92,
+            "category":1,
+            "rating":4.21,
+            "publisher":"Broadway Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/5521/9780552151740.jpg",
+            "image":"A-Short-History-of-Nearly-Everything.jpg"
+        }
+    },
+
+    {
+        "pk":16,
+        "model":"products.product",
+        "fields":{
+            "isbn":"486404889",
+            "name":"A General History of the Pyrates",
+            "author":"Daniel Defoe",
+            "num_pages":773,
+            "description":"A General History of the Robberies and Murders of the most notorious Pyrates is a 1724 book published in Britain containing biographies of contemporary pirates, which was influential in shaping popular conceptions of pirates.",
+            "book_format":"Paperback",
+            "price":19.85,
+            "category":1,
+            "rating":3.72,
+            "publisher":"Dover Publications",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4864/9780486404882.jpg",
+            "image":"A-General-History-of-the-Pyrates.jpg"
+        }
+    },
+
+    {
+        "pk":17,
+        "model":"products.product",
+        "fields":{
+            "isbn":"62508113",
+            "name":"The World's Religions",
+            "author":"Huston Smith",
+            "num_pages":416,
+            "description":"The World’s Religions, by beloved author and pioneering professor Huston Smith (Tales of Wonder), is the definitive classic for introducing the essential elements and teachings of the world's predominant faiths, including Hinduism, Buddhism, Confucianism, Taoism, Judaism, Christianity, Islam, as well as regional native traditions.",
+            "book_format":"Paperback",
+            "price":12.25,
+            "category":4,
+            "rating":4.07,
+            "publisher":"One World (UK)",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0616/9780061660184.jpg",
+            "image":"The-World's-Religions.jpg"
+        }
+    },
+
+    {
+        "pk":18,
+        "model":"products.product",
+        "fields":{
+            "isbn":"0684869136",
+            "name":"The Bible Unearthed",
+            "author":"Israel Finkelstein",
+            "num_pages":400,
+            "description":"In the past three decades, archaeologists have made great strides in recovering the lost world of the Old Testament. Dozens of digs in Egypt, Israel, Jordan and Lebanon have changed experts' understanding of ancient Israel and its neighbours- as well as their vision of the Bible's greatest tales. Yet until now, the public has remained almost entirely unaware of these discoveries which help separate legend from historical truth. Here, at last, two of archaeology's leading scholars shed new light on how the Bible came into existence. They assert, for example, that Abraham, Isaac and Jacob never existed, that David and Solomon were not great kings but obscure chieftains and that the Exodus never happened. They offer instead a new historical truth: the Bible was created by the people of the small, southern nation of Judah in a heroic last-ditch attempt to keep their faith alive after the demise of the larger, wealthier nation of Israel to the north. It is in this truth, not in the myths of the past, that the real value of the Bible is evident.",
+            "book_format":"Paperback",
+            "price":11.78,
+            "category":4,
+            "rating":3.42,
+            "publisher":" Free Press; New Ed edition",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/6848/9780684869131.jpg",
+            "image":"The-Bible-Unearthed.jpg"
+        }
+    },
+
+    {
+        "pk":19,
+        "model":"products.product",
+        "fields":{
+            "isbn":"451516753",
+            "name":"1984",
+            "author":"George Orwell",
+            "num_pages":268,
+            "description":"Hidden away in the Record Department of the sprawling Ministry of Truth, Winston Smith skilfully rewrites the past to suit the needs of the Party. Yet he inwardly rebels against the totalitarian world he lives in, which demands absolute obedience and controls him through the all-seeing telescreens and the watchful eye of Big Brother, symbolic head of the Party. In his longing for truth and liberty, Smith begins a secret love affair with a fellow-worker Julia, but soon discovers the true price of freedom is betrayal.",
+            "book_format":"Paperback",
+            "price":7.88,
+            "category":6,
+            "rating":4.18,
+            "publisher":"Signet Classics",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141036144.jpg",
+            "image":"1984.jpg"
+        }
+    },
+
+    {
+        "pk":20,
+        "model":"products.product",
+        "fields":{
+            "isbn":"849759682X",
+            "name":"Dune",
+            "author":"Frank Herbert",
+            "num_pages":702,
+            "description":"When the Emperor transfers stewardship of Arrakis from the noble House Harkonnen to House Atreides, the Harkonnens fight back, murdering Duke Leto Atreides. Paul, his son, and Lady Jessica, his concubine, flee into the desert. On the point of death, they are rescued by a band for Fremen, the native people of Arrakis, who control Arrakis' second great resource: the giant worms that burrow beneath the burning desert sands",
+            "book_format":"Hardback",
+            "price":13.60,
+            "category":2,
+            "rating":4.22,
+            "publisher":"Debolsillo",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/5750/9780575081505.jpg",
+            "image":"Dune.jpg"
+        }
+    },
+
+    {
+        "pk":21,
+        "model":"products.product",
+        "fields":{
+            "isbn":"140620621",
+            "name":"Moby Dick",
+            "author":"Herman Melville",
+            "num_pages":536,
+            "description":"Ishmael describes Moby Dick as having two prominent white areas around 'a peculiar snow-white wrinkled forehead, and a high, pyramidical white hump', the rest of his body being of stripes and patches between white and gray.",
+            "book_format":"Paperback",
+            "price":8.75,
+            "category":6,
+            "rating":3.50,
+            "publisher":"Penguin Books/Penguin Popular Classics",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199535729.jpg",
+            "image":"Moby-Dick.jpg"
+        }
+    },
+
+    {
+        "pk":22,
+        "model":"products.product",
+        "fields":{
+            "isbn":"143039954",
+            "name":"The Odyssey",
+            "author":"Homer",
+            "num_pages":541,
+            "description":"The first great adventure story in the Western canon, The Odyssey is a poem about violence and the aftermath of war; about wealth, poverty and power; about marriage, family and identity; and about travellers, hospitality and the changing meanings of home in a strange world.",
+            "book_format":"Hardback",
+            "price":15.32,
+            "category":2,
+            "rating":3.76,
+            "publisher":"Penguin Classics",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/3933/9780393356250.jpg",
+            "image":"The-Odyssey.jpg"
+        }
+    },
+
+    {
+        "pk":23,
+        "model":"products.product",
+        "fields":{
+            "isbn":"471377589",
+            "name":"The Iliad",
+            "author":"Homer",
+            "num_pages":150,
+            "description":"High on Olympus, Zeus and the assembled deities look down on the world of men, to the city of Troy where a bitter and bloody war has dragged into its tenth year, and a quarrel rages between a legendary warrior and his commander. Greek ships decay, men languish, exhausted, and behind the walls of Troy a desperate people await the next turn of fate.",
+            "book_format":"Hardback",
+            "price":18.73,
+            "category":6,
+            "rating":3.86,
+            "publisher":"John Wiley & Sons",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1413/9780141394657.jpg",
+            "image":"The-Iliad.jpg"
+        }
+    },
+
+    {
+        "pk":24,
+        "model":"products.product",
+        "fields":{
+            "isbn":"60935464",
+            "name":"To Kill a Mockingbird",
+            "author":"Harper Lee",
+            "num_pages":323,
+            "description":"A lawyer's advice to his children as he defends the real mockingbird of Harper Lee's classic novel - a black man charged with the rape of a white girl. Through the young eyes of Scout and Jem Finch, Harper Lee explores with exuberant humour the irrationality of adult attitudes to race and class in the Deep South of the thirties. The conscience of a town steeped in prejudice, violence and hypocrisy is pricked by the stamina of one man's struggle for justice. But the weight of history will only tolerate so much.",
+            "book_format":"Paperback",
+            "price":6.26,
+            "category":2,
+            "rating":4.27,
+            "publisher":"Harper Perennial Modern Classics",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0995/9780099549482.jpg",
+            "image":"To-Kill-a-Mockingbird.jpg"
+        }
+    },
+
+    {
+        "pk":25,
+        "model":"products.product",
+        "fields":{
+            "isbn":"3895086908",
+            "name":"War and Peace",
+            "author":"Leo Tolstoy",
+            "num_pages":1500,
+            "description":"At a glittering society party in St Petersburg in 1805, conversations are dominated by the prospect of war. Terror swiftly engulfs the country as Napoleon's army marches on Russia, and the lives of three young people are changed forever. The stories of quixotic Pierre, cynical Andrey and impetuous Natasha interweave with a huge cast, from aristocrats and peasants to soldiers and Napoleon himself. In War and Peace, Tolstoy entwines grand themes - conflict and love, birth and death, free will and faith - with unforgettable scenes of nineteenth-century Russia, to create a magnificent epic of human life in all its imperfection and grandeur.",
+            "book_format":"Paperback",
+            "price":13.43,
+            "category":2,
+            "rating":4.11,
+            "publisher":"Konemann",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1992/9780199232765.jpg",
+            "image":"War-and-Peace.jpg"
+        }
+    },
+
+    {
+        "pk":26,
+        "model":"products.product",
+        "fields":{
+            "isbn":"1411400429",
+            "name":"Hamlet",
+            "author":"William Shakespeare",
+            "num_pages":352,
+            "description":"Hamlet, or The Tragedy of Hamlet, Prince of Denmark, by William Shakespeare is one of the most influential works of world literature. Enjoy it again or for the very first time in this stylish new paperback edition.",
+            "book_format":"Paperback",
+            "price":4.02,
+            "category":6,
+            "rating":4.07,
+            "publisher":"SparkNotes",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4862/9780486272788.jpg",
+            "image":"Hamlet.jpg"
+        }
+    },
+
+    {
+        "pk":27,
+        "model":"products.product",
+        "fields":{
+            "isbn":"517223627",
+            "name":"Alice's Adventures in Wonderland",
+            "author":"Lewis Carroll",
+            "num_pages":92,
+            "description":"With the curious, quick-witted Alice at its heart, readers will not only rediscover characters such as the charming White Rabbit, the formidable Queen of Hearts, the Mad Hatter and the grinning Cheshire Cat but will find fresh and wonderful creations of these characters by a true master of his art,; images that will live in our hearts and minds for generations to come.",
+            "book_format":"Hardback",
+            "price":21.87,
+            "category":6,
+            "rating":4.03,
+            "publisher":"Gramercy Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1475/9780147515872.jpg",
+            "image":"Alices-Adventures-in-Wonderland.jpg"
+        }
+    },
+
+    {
+        "pk":28,
+        "model":"products.product",
+        "fields":{
+            "isbn":"141439564",
+            "name":"Great Expectations",
+            "author":"Charles Dickens",
+            "num_pages":512,
+            "description":"Great Expectations follows the childhood and young adult years of Pip a blacksmith's apprentice in a country village. He suddenly comes into a large fortune (his great expectations) from a mysterious benefactor and moves to London where he enters high society.",
+            "book_format":"Hardback",
+            "price":16.45,
+            "category":2,
+            "rating":3.77,
+            "publisher":"Penguin Books",
+            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141040363.jpg",
+            "image":"Great-Expectations.jpg"
+        }
+    }
+]
