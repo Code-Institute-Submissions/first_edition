@@ -34,3 +34,9 @@
     text-decoration: none;
     color:white;
 }
+
+@media (min-width: 992px) {
+   .header-container {
+        padding-top: 164px;
+    }
+}
