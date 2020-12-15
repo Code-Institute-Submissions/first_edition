@@ -1,1 +1,1 @@
-web: gunicorn first_edition.wsgi:application
+web: gunicorn first-edition.wsgi:application
