@@ -31,40 +31,33 @@
 
    <header class="container-fluid fixed-top beige">
 
-        <div class="row beige">
+        <div class="row beige pt-10px ruda">
             <div class="col-lg-4 text-lg-left py-1">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font">The First Edition</h2>
+                    <h2 class="logo-font align-right">The First Edition</h2>
                 </a>
             </div>
 
-            <div class="col-lg-4  py-3">
-                 <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group ">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search all products">
-                        <div class="input-group-append">
-                            <button class="form-control rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search purple-text"></i>
-                                </span>
-                            </button>
-                        </div>
+            <div class="col-lg-4  py-2">
+                <div class="input-group ">
+                 <form onsubmit="event.preventDefault();" role="search" method="GET" action="{% url 'products' %}" class="search-form">
+                        <input id="search" class="search-input" type="search" placeholder="Search all Products" autofocus required />
+                            <button type="submit" class="search-button">Go</button>    
+                    </form>
                     </div>
-                </form>
             </div>
-
-             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0"><a href="{% url 'profile' %}">My Account</a></p>
-                            </div>
-                        </a>
-                        <li class="list-inline-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
-                        <div class="dropdown-menu">
+            <div class="col-lg-4 my-auto py-1 py-lg-0">
+            <ul class="nav d-flex align-items-end">
+                        {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                            <li class="nav-item">
+                            <a class="nav-link nav-link-style" href="">Add a Product</a>
+                            </li>
+                        {% endif %}
+                            {% endif %}
+                            <li class="list-inline-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-style" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
+                            <div class="dropdown-menu">
                             <a class="dropdown-item" href="{% url 'products' %}?category=fiction">Fiction</a>
                             <a class="dropdown-item" href="{% url 'products' %}?category=religion_&_beliefs">Religion & Beliefs</a>
                             <a class="dropdown-item" href="{% url 'products' %}?category=philosophy">Philosophy</a>
@@ -75,30 +68,26 @@
                             <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
                             </div>
                         </li>
-
-                        <li class="list-inline-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">users</a>
-                        <div class="dropdown-menu">
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            </div>
-                        </li>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-style" href="{% url 'profile' %}">My Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-style" href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-style" href="{% url 'account_login' %}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-style" href="{% url 'account_signup' %}">Register</a>
+                            </li>
+                        {% endif %}
+                            <li class="nav-item">
+                                  <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
+                                <div><i class="fas fa-shopping-bag fa-lg nav-link-style"></i></div>
+                                <p class="my-0 nav-link-style">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -107,10 +96,10 @@
                                 </p>
                             </div>
                         </a>
-                    </li>
-                </ul>
-            </div>
-            
+                            </li>
+
+                            </ul>
+</div>
             </div>
    </header>
      {% if messages %}

@@ -1,2 +1,1 @@
-admin
-12345
+https://freefrontend.com/css-search-boxes/
