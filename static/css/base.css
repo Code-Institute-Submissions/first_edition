@@ -20,11 +20,18 @@
     background-color: #53513c;
 }
 
+.cream {
+    background-color: #fbf3e4;
+}
+
 /* margins and paddings */
 
 .pb-350 {
 
     padding-bottom:350px;
+}
+.pt-250 {
+    padding-top: 250px;
 }
 
 .mt-350 {
@@ -35,6 +42,15 @@
 
 .ruda {
     font-family:"Ruda", "Arial";
+}
+
+.roboto {
+    font-family: "Roboto", "Arial";
+}
+
+.index-book-selection-font {
+    font-weight:700;
+    font-size:29px;
 }
 
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */
@@ -119,6 +135,31 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
+.padding-10 {
+    padding: 10px 10px 10px 10px;
+}
+
+.pb-250 {
+    padding-bottom:250px;
+}
+
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.065);
+  transform: scale(1.065);
+}
 
 
 /** navbar **/
@@ -161,7 +202,7 @@ color:white;
   font-size: 1.1rem;
 }
 .search-input[type="search"] {
-  outline: 0; /* <-- shold probably remove this for better accessibility, adding for demo aesthetics for now. */
+  outline: 0;
   width: 100%;
   background: var(--color-light);
   padding: 0 1.6rem;
@@ -184,6 +225,39 @@ color:white;
 .search-input:not(:placeholder-shown) {
   border-radius: var(--rad) 0 0 var(--rad);
   width: calc(110% - var(--btn-width));
+}
+
+
+/* index page */
+
+.frontpage-img {
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+.book-row {
+    border:black 1px;
+}
+
+.front-img-margin {
+    margin-top:500px;
+}
+
+.scroll-img-container {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.index-book-margin {
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.index-book-margin-first {
+    margin-left:0px;
+    margin-right:15px;
 }
 
 

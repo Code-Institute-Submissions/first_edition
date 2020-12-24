@@ -6,11 +6,146 @@
 {% endblock %}
 
 {% block content %}
- <div class="container-fluid beige pb-350">
+ <div class="container-fluid beige">
     <div class="row beige">
         <div class="col-lg-4 offset-lg-4 mt-350">
             <h2 class="text-center">Shop here today!</h2>
         </div>
     </div>
+
+    <div class="row front-img-margin cream">
+        <div class="col-10 offset-md-1">
+            <img src="media/reading-room.jpg" alt="" class="frontpage-img">
+
+        </div>
+
+    </div>
    </div>
+   <div class="container-fluid cream pt-250">
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <div class="row">
+                <div class="col-9">
+                    <p class="roboto index-book-selection-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  dui, non pulvinar</p>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
+                </div>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="row book-row pb-250">
+        <div class="col-6 offset-md-3">
+                <div class="scroll-img-container padding-10">
+                    {% for product in product_bestsellers %}
+                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+                </div>
+                
+                
+
+
+    </div>
+
+    <div class="container-fluid cream">
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <div class="row">
+                <div class="col-9">
+                    <p class="roboto index-book-selection-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  dui, non pulvinar</p>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
+                </div>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="row book-row pb-250">
+        <div class="col-6 offset-md-3">
+                <div class="scroll-img-container padding-10">
+                    {% for product in product_fiction %}
+                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+                </div>
+                
+                
+
+
+    </div>
+
+    <div class="container-fluid cream">
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <div class="row">
+                <div class="col-9">
+                    <p class="roboto index-book-selection-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  dui, non pulvinar</p>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
+                </div>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="row book-row pb-250">
+        <div class="col-6 offset-md-3">
+                <div class="scroll-img-container padding-10">
+                    {% for product in product_history %}
+                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+                </div>
+                
+                
+
+
+    </div>
+
+    <div class="container-fluid cream">
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <div class="row">
+                <div class="col-9">
+                    <p class="roboto index-book-selection-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  dui, non pulvinar</p>
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-primary" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
+                </div>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="row book-row pb-250">
+        <div class="col-6 offset-md-3">
+                <div class="scroll-img-container padding-10">
+                    {% for product in product_philosophy %}
+                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                        </a>
+                    {% endfor %}
+            </div>
+        </div>
+                </div>
+                
+                
+
+
+    </div>
 {% endblock %}
