@@ -51,7 +51,7 @@
                         {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                             <li class="nav-item">
-                            <a class="nav-link nav-link-style" href="">Add a Product</a>
+                            <a class="nav-link nav-link-style" href="{% url 'add_product' %}">Add a Product</a>
                             </li>
                         {% endif %}
                             {% endif %}
