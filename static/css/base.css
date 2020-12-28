@@ -24,6 +24,10 @@
     background-color: #fbf3e4;
 }
 
+.grey {
+    background-color:#EBECED;
+}
+
 /* margins and paddings */
 
 .pb-350 {
@@ -38,6 +42,17 @@
     margin-top:350px;
 }
 
+.mr-10 {
+    margin-right:23.5px;
+}
+.pt-10px {
+    padding-top:10px;
+}
+
+.pt-150 {
+
+    padding-top:150px;
+}
 /* fonts */
 
 .ruda {
@@ -51,6 +66,11 @@
 .index-book-selection-font {
     font-weight:700;
     font-size:29px;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    font-weight:700;
 }
 
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */
@@ -80,14 +100,7 @@
 
 /* Paddings and Margins */
 
-.pt-10px {
-    padding-top:10px;
-}
 
-.mt-100 {
-
-    margin-top:100px;
-}
 
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -284,7 +297,8 @@ color:white;
 
 .product-height {
 
-    height:500px;
+    height:400px;
+    width:266px;
 }
 
 
