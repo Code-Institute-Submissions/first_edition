@@ -41,7 +41,7 @@
                 <div class="scroll-img-container padding-10">
                     {% for product in product_bestsellers %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
                         </a>
                     {% endfor %}
             </div>
@@ -73,7 +73,7 @@
                 <div class="scroll-img-container padding-10">
                     {% for product in product_fiction %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
                     {% endfor %}
             </div>
@@ -105,7 +105,7 @@
                 <div class="scroll-img-container padding-10">
                     {% for product in product_history %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
                     {% endfor %}
             </div>
@@ -137,7 +137,7 @@
                 <div class="scroll-img-container padding-10">
                     {% for product in product_philosophy %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin-first">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
                     {% endfor %}
             </div>
