@@ -26,7 +26,7 @@
             <div class="col-6 offset-md-3">
                 <div class="row">
                 <div class="col-9">
-                    <p class="roboto index-book-selection-font">Best Sellers</p>
+                    <p class="roboto index-book-selection-font">10 Best Sellers in The First Edition</p>
                 </div>
                 <div class="col-3">
                     <a class="btn btn-primary" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
@@ -38,7 +38,7 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10">
+                <div class="scroll-img-container padding-10 light-cream">
                     {% for product in product_bestsellers %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
@@ -56,9 +56,9 @@
     <div class="container-fluid cream">
         <div class="row">
             <div class="col-6 offset-md-3">
-                <div class="row">
+                <div class="row ">
                 <div class="col-9">
-                    <p class="roboto index-book-selection-font">Fiction</p>
+                    <p class="roboto index-book-selection-font">Highly Rated Fiction Books</p>
                 </div>
                 <div class="col-3">
                     <a class="btn btn-primary" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
@@ -70,11 +70,13 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10">
+                <div class="scroll-img-container padding-10 light-cream">
                     {% for product in product_fiction %}
+                        {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
+                        {% endif %}
                     {% endfor %}
             </div>
         </div>
@@ -90,7 +92,7 @@
             <div class="col-6 offset-md-3">
                 <div class="row">
                 <div class="col-9">
-                    <p class="roboto index-book-selection-font">History</p>
+                    <p class="roboto index-book-selection-font">Highly Rated History Books</p>
                 </div>
                 <div class="col-3">
                     <a class="btn btn-primary" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
@@ -102,11 +104,13 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10">
+                <div class="scroll-img-container padding-10 light-cream">
                     {% for product in product_history %}
+                        {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
+                        {% endif %}
                     {% endfor %}
             </div>
         </div>
@@ -122,7 +126,7 @@
             <div class="col-6 offset-md-3">
                 <div class="row">
                 <div class="col-9">
-                    <p class="roboto index-book-selection-font">Philosophy</p>
+                    <p class="roboto index-book-selection-font">Highly Rated Philosophy Books</p>
                 </div>
                 <div class="col-3">
                     <a class="btn btn-primary" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
@@ -134,11 +138,13 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10">
+                <div class="scroll-img-container padding-10 light-cream">
                     {% for product in product_philosophy %}
+                        {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
+                        {% endif %}
                     {% endfor %}
             </div>
         </div>

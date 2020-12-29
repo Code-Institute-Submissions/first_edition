@@ -23,9 +23,16 @@
 .cream {
     background-color: #fbf3e4;
 }
+.light-cream {
+    background-color:#F9F6F0;
+}
 
 .grey {
     background-color:#EBECED;
+}
+
+.black {
+    background-color: black;
 }
 
 /* margins and paddings */
@@ -42,9 +49,6 @@
     margin-top:350px;
 }
 
-.mr-10 {
-    margin-right:23.5px;
-}
 .pt-10px {
     padding-top:10px;
 }
@@ -298,9 +302,15 @@ color:white;
 .product-height {
 
     height:400px;
-    width:266px;
+    width:233px;
+     display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.test {
+    text-align:center;
+}
 
 /* media widths */
 

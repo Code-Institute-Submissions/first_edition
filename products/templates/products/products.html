@@ -13,7 +13,7 @@
         
         <div class="row mt-4 mb-4">
                         <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                            <div class="sort-select-wrapper w-50 mr-10">
+                            <div class="sort-select-wrapper w-50">
                                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by</option>
                                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -30,19 +30,19 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 order-md-first">
-                            <p class="roboto">
+                            <p class="roboto product-name">
                             
                                 {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                             </p>
                         </div>
                     </div>
-                <div class="row grey">
+                <div class="row light-cream pt-4">
                     {% for product in products %}
                         <div class="col-sm-6 col-lg-4">
-                            <div class="card h-100 border-0 grey">
+                            <div class="card h-100 border-0 light-cream">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow-product-page">
-                                    <img class="card-img-top product-height" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class=" product-height" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
@@ -50,10 +50,10 @@
                                 </a>
                                 {% endif %}
                                 <div class="mt-3 pb-0">
-                                    <p class="mb-1 roboto product-name ">{{ product.name }}</p>
+                                    <p class="mb-1 roboto product-name ml-4 ">{{ product.name }}</p>
                                 </div>
-                                <div class=" bg-white pt-0 border-0 text-left">
-                                    <div class="row grey">
+                                <div class=" bg-white pt-0 border-0 ml-4">
+                                    <div class="row light-cream">
                                         <div class="col">
                                             <small class="text-muted ruda"><i class="fas fa-feather-alt mr-1"></i>{{ product.author }}</small>
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
@@ -91,8 +91,8 @@
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
+                        <div class="col-12 d-none d-xl-block mb-5 mt-5">
+                                <hr class="black">
                             </div>
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                                 <hr>
