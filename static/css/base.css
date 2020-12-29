@@ -104,7 +104,9 @@
 
 /* Paddings and Margins */
 
-
+.right {
+   float:right;
+}
 
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
@@ -310,6 +312,17 @@ color:white;
 
 .test {
     text-align:center;
+}
+
+/* Product Detail Page */
+
+.image-product-detail {
+    height:380px;
+    width:260px;
+}
+
+.product-detail-txt {
+    font-size:2.1rem;
 }
 
 /* media widths */
