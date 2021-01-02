@@ -1,19 +1,13 @@
-/* imported fonts */
+/* =====================
+        Imported Fonts
+   ===================== */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda")
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda");
 
-/* Colours */
+/* =====================
+        Colours
+   ===================== */
 
-.purple {
-    background-color:#5f2d91;
-    color:#5f2d91;
-}
-
-.purple-text {
-    color:#5f2d91;
-}
-
-.white
 
 .light-beige {
     background-color: #fbf3e4;
@@ -22,10 +16,10 @@
     background-color: #53513c;
 }
 
-.cream {
+.grey {
     background-color:#C3CED6;
 }
-.light-cream {
+.light-grey {
     background-color:#A7B8C3;
 }
 
@@ -37,9 +31,33 @@
     background-color:#26272b;
 }
 
+.grey-text {
+    color:#737373;
+}
 
+/* =====================
+        Fonts
+   ===================== */
 
-/* margins and paddings */
+.ruda {
+    font-family:"Ruda", "Arial";
+}
+
+.roboto {
+    font-family: "Roboto", "Arial";
+}
+
+/* =====================
+    Margins and Paddings
+   ===================== */
+
+.padding-10 {
+    padding: 10px 10px 10px 10px;
+}
+
+.pb-250 {
+    padding-bottom:250px;
+}
 
 .pb-350 {
 
@@ -60,25 +78,6 @@
 .pt-150 {
 
     padding-top:150px;
-}
-/* fonts */
-
-.ruda {
-    font-family:"Ruda", "Arial";
-}
-
-.roboto {
-    font-family: "Roboto", "Arial";
-}
-
-.index-book-selection-font {
-    font-weight:700;
-    font-size:29px;
-}
-
-.product-name {
-    font-size: 1.25rem;
-    font-weight:700;
 }
 
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */
@@ -105,13 +104,6 @@
 .remove-item {
     cursor:pointer;
 }
-
-/* Paddings and Margins */
-
-.right {
-   float:right;
-}
-
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
@@ -163,15 +155,10 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-.padding-10 {
-    padding: 10px 10px 10px 10px;
-}
 
-.pb-250 {
-    padding-bottom:250px;
-}
-
-/* Grow Shadow */
+/* =====================
+        Hover.css
+   ===================== */
 .hvr-grow-shadow {
   display: inline-block;
   vertical-align: middle;
@@ -206,8 +193,53 @@
   transform: scale(1.025);
 }
 
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-float-shadow:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  color:white;
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
 
-/** navbar **/
+
+/* =====================
+        Navbar
+   ===================== */
 
 .logo-font {
 text-decoration: none;
@@ -273,7 +305,9 @@ color:white;
 }
 
 
-/* index page */
+/* =====================
+       Index Template
+   ===================== */
 
 .frontpage-img {
     width:100%;
@@ -287,50 +321,12 @@ color:white;
     border-color:#FF7F50 ;
     color:white;
 }
- 
 
-.hvr-float-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+.index-book-selection-font {
+    font-weight:700;
+    font-size:29px;
 }
-.hvr-float-shadow:before {
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  /* W3C */
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform, opacity;
-  transition-property: transform, opacity;
-}
-.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  color:white;
-  /* move the element up by 5px */
-}
-.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
-  opacity: 1;
-  -webkit-transform: translateY(5px);
-  transform: translateY(5px);
-  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
-}
+ 
 
 .product-height-index {
     height:233px;
@@ -353,7 +349,9 @@ color:white;
     margin-left:0px;
     margin-right:15px;
 }
-/* products page */
+/* =====================
+    Products Template
+   ===================== */
 
 .product-height {
 
@@ -364,11 +362,14 @@ color:white;
   margin-right: auto;
 }
 
-.test {
-    text-align:center;
+.product-name {
+    font-size: 1.25rem;
+    font-weight:700;
 }
 
-/* Product Detail Page */
+/* =====================
+   Product Detail Template
+   ===================== */
 
 .image-product-detail {
     height:380px;
@@ -379,7 +380,9 @@ color:white;
     font-size:2.1rem;
 }
 
-/* Footer */
+/* =====================
+        Footer
+   ===================== */
 
 .site-footer
 {
@@ -455,24 +458,6 @@ color:white;
 {
   margin:0
 }
-@media (max-width:991px)
-{
-  .site-footer [class^=col-]
-  {
-    margin-bottom:30px
-  }
-}
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center
-  }
-}
 .social-icons
 {
   padding-left:0;
@@ -535,17 +520,10 @@ color:white;
 {
   background-color:#ea4c89
 }
-@media (max-width:767px)
-{
-  .social-icons li.title
-  {
-    display:block;
-    margin-right:0;
-    font-weight:600
-  }
-}
 
-/* media widths */
+/* =====================
+        Media Widths
+   ===================== */
 
 @media (min-width: 992px) {
    .header-container {
@@ -558,4 +536,33 @@ color:white;
 
     height:350px;
 }
+}
+
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
 }

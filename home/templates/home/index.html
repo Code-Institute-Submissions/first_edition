@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="row front-img-margin cream">
+    <div class="row front-img-margin grey">
         <div class="col-10 offset-md-1">
             <img src="media/reading-room.jpg" alt="" class="frontpage-img">
 
@@ -21,7 +21,7 @@
 
     </div>
    </div>
-   <div class="container-fluid cream pt-250">
+   <div class="container-fluid grey pt-250">
         <div class="row">
             <div class="col-6 offset-md-3">
                 <div class="row">
@@ -38,7 +38,7 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 light-cream">
+                <div class="scroll-img-container padding-10 light-grey">
                     {% for product in product_bestsellers %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
@@ -53,7 +53,7 @@
 
     </div>
 
-    <div class="container-fluid cream">
+    <div class="container-fluid grey">
         <div class="row">
             <div class="col-6 offset-md-3">
                 <div class="row ">
@@ -70,7 +70,7 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 light-cream">
+                <div class="scroll-img-container padding-10 light-grey">
                     {% for product in product_fiction %}
                         {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
@@ -87,7 +87,7 @@
 
     </div>
 
-    <div class="container-fluid cream">
+    <div class="container-fluid grey">
         <div class="row">
             <div class="col-6 offset-md-3">
                 <div class="row">
@@ -104,7 +104,7 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 light-cream">
+                <div class="scroll-img-container padding-10 light-grey">
                     {% for product in product_history %}
                         {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
@@ -121,7 +121,7 @@
 
     </div>
 
-    <div class="container-fluid cream">
+    <div class="container-fluid grey">
         <div class="row">
             <div class="col-6 offset-md-3">
                 <div class="row">
@@ -138,7 +138,7 @@
 
     <div class="row book-row pb-250">
         <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 light-cream">
+                <div class="scroll-img-container padding-10 light-grey">
                     {% for product in product_philosophy %}
                         {% if product.rating > 4.00 %}
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
