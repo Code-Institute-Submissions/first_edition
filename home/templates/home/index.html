@@ -6,8 +6,8 @@
 {% endblock %}
 
 {% block content %}
- <div class="container-fluid beige">
-    <div class="row beige">
+ <div class="container-fluid charcoal">
+    <div class="row charcoal">
         <div class="col-lg-4 offset-lg-4 mt-350">
             <h2 class="text-center">Shop here today!</h2>
         </div>
@@ -29,7 +29,7 @@
                     <p class="roboto index-book-selection-font">10 Best Sellers in The First Edition</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-primary" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
+                    <a class="btn index-button mb-3 hvr-float-shadow" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
                 </div>
             
         </div>
@@ -61,7 +61,7 @@
                     <p class="roboto index-book-selection-font">Highly Rated Fiction Books</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-primary" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
+                    <a class="btn mb-3 hvr-float-shadow index-button" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
                 </div>
             
         </div>
@@ -95,7 +95,7 @@
                     <p class="roboto index-book-selection-font">Highly Rated History Books</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-primary" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
+                    <a class="btn mb-3 hvr-float-shadow index-button" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
                 </div>
             
         </div>
@@ -129,7 +129,7 @@
                     <p class="roboto index-book-selection-font">Highly Rated Philosophy Books</p>
                 </div>
                 <div class="col-3">
-                    <a class="btn btn-primary" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
+                    <a class="btn mb-3 hvr-float-shadow index-button" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
                 </div>
             
         </div>
