@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid pt-150 cream">
+<div class="container-fluid pt-150 light-grey pb-5">
     <div class="row">
         <div class="col-6 offset-3">
         
@@ -36,10 +36,10 @@
                             </p>
                         </div>
                     </div>
-                <div class="row light-cream pt-4">
+                <div class="row half-light-grey pt-4">
                     {% for product in products %}
                         <div class="col-sm-6 col-lg-4">
-                            <div class="card h-100 border-0 light-cream">
+                            <div class="card h-100 border-0 half-light-grey">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow-product-page">
                                     <img class=" product-height" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -53,7 +53,7 @@
                                     <p class="mb-1 roboto product-name ml-4 ">{{ product.name }}</p>
                                 </div>
                                 <div class=" bg-white pt-0 border-0 ml-4">
-                                    <div class="row light-cream">
+                                    <div class="row half-light-grey">
                                         <div class="col">
                                             <small class="text-muted ruda"><i class="fas fa-feather-alt mr-1"></i>{{ product.author }}</small>
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
@@ -92,7 +92,7 @@
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
                         <div class="col-12 d-none d-xl-block mb-5 mt-5">
-                                <hr class="black">
+                                <hr class="products-hr">
                             </div>
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                                 <hr>

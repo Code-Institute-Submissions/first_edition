@@ -16,15 +16,16 @@
     background-color: #53513c;
 }
 
-.grey {
-    background-color:#C3CED6;
-}
 .light-grey {
-    background-color:#A7B8C3;
+    background-color:#EBECED;
+}
+
+.half-light-grey {
+    background-color:#C3CED6;
 }
 
 .grey {
-    background-color:#EBECED;
+    background-color:#e1e6ea;
 }
 
 .charcoal {
@@ -159,22 +160,6 @@
 /* =====================
         Hover.css
    ===================== */
-.hvr-grow-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform;
-}
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1.065);
-  transform: scale(1.065);
-}
 
 .hvr-grow-shadow-product-page {
   display: inline-block;
@@ -188,7 +173,7 @@
   transition-property: box-shadow, transform;
 }
 .hvr-grow-shadow-product-page:hover, .hvr-grow-shadow-product-page:focus, .hvr-grow-shadow-product-page:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.025);
   transform: scale(1.025);
 }
@@ -362,6 +347,11 @@ color:white;
   margin-right: auto;
 }
 
+.products-hr {
+  border-top-color:#26272b;
+  
+}
+
 .product-name {
     font-size: 1.25rem;
     font-weight:700;
@@ -395,7 +385,7 @@ color:white;
 .site-footer hr
 {
   border-top-color:#bbb;
-  opacity:0.5
+  opacity:0.5;
 }
 .site-footer hr.small
 {
@@ -407,7 +397,7 @@ color:white;
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 .site-footer a
 {
@@ -421,15 +411,15 @@ color:white;
 .footer-links
 {
   padding-left:0;
-  list-style:none
+  list-style:none;
 }
 .footer-links li
 {
-  display:block
+  display:block;
 }
 .footer-links a
 {
-  color:#737373
+  color:#737373;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
@@ -452,7 +442,7 @@ color:white;
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color:#33353d;
 }
 .copyright-text
 {
