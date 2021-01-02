@@ -32,9 +32,7 @@
     background-color:#26272b;
 }
 
-.grey-text {
-    color:#737373;
-}
+
 
 /* =====================
         Fonts
@@ -46,6 +44,14 @@
 
 .roboto {
     font-family: "Roboto", "Arial";
+}
+
+.white-text {
+    color:#ffffff !important;
+}
+
+.grey-text {
+    color:#737373;
 }
 
 /* =====================
@@ -243,7 +249,7 @@ color:white;
   --dur: .3s;
   --color-dark: #2f2f2f;
   --color-light: #fff;
-  --color-brand: #57bd84;
+  --color-brand: #C3CED6;
   --font-fam: 'Roberto', sans-serif;
   --height:45px;
   --btn-width: 6rem;
@@ -368,6 +374,12 @@ color:white;
 
 .product-detail-txt {
     font-size:2.1rem;
+}
+
+.btn-format-price {
+    background-color: #FF7F50;
+    border-color:#FF7F50 ;
+    color:white;
 }
 
 /* =====================
