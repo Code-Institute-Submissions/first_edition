@@ -32,6 +32,10 @@
     background-color:#26272b;
 }
 
+body {
+    background-color:#EBECED;
+}
+
 
 
 /* =====================
@@ -85,6 +89,13 @@
 .pt-150 {
 
     padding-top:150px;
+}
+
+.mb-300 {
+    margin-bottom: 300px;
+}
+.mb-150 {
+    margin-bottom: 150px;
 }
 
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */
@@ -260,7 +271,7 @@ color:white;
     color:white;
 }
 .nav-link-style:hover {
-    color:whitfreo
+    color:#FF7F50;
 }
 
 :root {
@@ -268,7 +279,7 @@ color:white;
   --dur: .3s;
   --color-dark: #2f2f2f;
   --color-light: #fff;
-  --color-brand: #C3CED6;
+  --color-brand:#FF7F50;
   --font-fam: 'Roberto', sans-serif;
   --height:45px;
   --btn-width: 6rem;
@@ -329,11 +340,10 @@ color:white;
 
 .black-fade {
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.75);
-  color:#26272b;
+  background: rgba(0,0,0,0.8);
   padding: 0 2px 0 2px;
 }
 
@@ -349,12 +359,34 @@ color:white;
    width: 100%;
   height:990px;
   background-size: 100% 100%;
-  opacity: 0.85;
+  
 }
-.index-button {
+.button-style {
+    background-color: #FF7F50;
+    border:none;
+    color:white;
+    padding:5px 10px;
+    
+}
+
+.hero-button-1 {
     background-color: #FF7F50;
     border-color:#FF7F50 ;
     color:white;
+    position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-button-2 {
+    background-color: #FF7F50;
+    border-color:#FF7F50 ;
+    color:white;
+    position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
 }
 
 .index-book-selection-font {
@@ -476,7 +508,7 @@ color:white;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#FF7F50;
   text-decoration:none;
 }
 .footer-links.inline li

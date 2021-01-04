@@ -33,7 +33,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<div class="row pt-150">
+<div class="container-fluid">
+<div class="row pt-150 mb-300">
 <div class="col-md-4 col-12 offset-md-4">
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
@@ -42,8 +43,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction button-style" type="submit">{% trans "Sign In" %}</button>
 </form>
+</div>
 </div>
 </div>
 

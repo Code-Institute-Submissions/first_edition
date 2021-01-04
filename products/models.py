@@ -23,6 +23,7 @@ class Product(models.Model):
     author = models.CharField(max_length=254, null=True, blank=True)
     num_pages = models.IntegerField(null=True, blank=True)
     description = models.TextField()
+    professional_endorsement = models.TextField(blank=True, null=True)
     book_format = models.CharField(max_length=554)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     rating = models.DecimalField(
