@@ -82,6 +82,14 @@ body {
     margin-top:350px;
 }
 
+.mb-500 {
+    margin-bottom:500px;
+}
+
+.mt-250 {
+    margin-top: 250px;
+}
+
 .pt-10px {
     padding-top:10px;
 }
@@ -90,12 +98,18 @@ body {
 
     padding-top:150px;
 }
+.pb-50 {
+    padding-bottom:50px;
+}
 
 .mb-300 {
     margin-bottom: 300px;
 }
 .mb-150 {
     margin-bottom: 150px;
+}
+.mt-150 {
+    margin-top:150px;
 }
 
 /* from Bulma, to ensure FA icons to remain centered and perfectly sized */

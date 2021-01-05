@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid pb-5">
+    <div class="container-fluid mb-5">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-2 offset-lg-3 grey pt-5">
                 
@@ -95,11 +95,12 @@
                         <p class="mt-3 ">"{{ product.professional_endorsement }}"</p>   
                         </div>                     
                     {% endif %}
-
+                        <div class="pb-50">
                     <h4 class="product-detail-txt mt-4">Product Details</h4>
                     <p class="">ISBN: {{ product.isbn }}</p>
                     <p class="">Length: {{ product.num_pages }} pages</p>
                     <p class="">Publisher: {{ product.publisher }}</p>
+                    </div>
 
                     
 

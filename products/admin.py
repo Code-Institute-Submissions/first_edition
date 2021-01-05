@@ -9,6 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
         "author",
         "num_pages",
         "description",
+        "professional_endorsement",
         "book_format",
         "price",
         "category",

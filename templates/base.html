@@ -69,12 +69,14 @@
                             </div>
                         </li>
                         {% if request.user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-style" href="{% url 'profile' %}">My Account</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-style" href="{% url 'account_logout' %}">Logout</a>
-                            </li>
+                            <li class="list-inline-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-style" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            </div>
+                        </li>
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link nav-link-style" href="{% url 'account_login' %}">Login</a>
@@ -86,7 +88,7 @@
                             <li class="nav-item">
                                   <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg nav-link-style"></i></div>
+                                
                                 <p class="my-0 nav-link-style">
                                     {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
