@@ -32,6 +32,10 @@
     background-color:#26272b;
 }
 
+.coral {
+    background-color:#FF7F50;
+}
+
 body {
     background-color:#EBECED;
 }
@@ -56,6 +60,9 @@ body {
 
 .grey-text {
     color:#737373;
+}
+.coral-text {
+    color:#FF7F50;
 }
 
 /* =====================
@@ -380,7 +387,7 @@ color:white;
   
 }
 .button-style {
-    background-color: #FF7F50;
+    background-color:#FF7F50;
     border:none;
     color:white;
     padding:5px 10px;
