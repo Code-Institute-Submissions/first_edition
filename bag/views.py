@@ -16,18 +16,40 @@ def add_to_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    bag = request.session.get('bag', {})
+    bag = request.session.get("bag", {})
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         messages.success(
-            request, f'Updated {product.name} \
-                 Quantity in your bag to {bag[item_id]}')
+            request, f"Updated {product.name} \
+                 Quantity in your bag to {bag[item_id]}")
     else:
         bag[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag')
+        messages.success(request, f"Added {product.name} to your bag")
 
     request.session['bag'] = bag
+    return redirect(redirect_url)
+
+
+def add_to_save_for_later(request, item_id):
+    """ Saves a product in the bag template
+     for later purchase but doesn't actually add to shopping cart """
+
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = 1
+    redirect_url = request.POST.get("redirect_url")
+    save_for_later = request.session.get("save_for_later", {})
+
+    if item_id in list(save_for_later.keys()):
+        messages.success(
+            request, f"The book {product.name} \
+                is already saved for later")
+    else:
+        save_for_later[item_id] = quantity
+        messages.success(
+            request, f"Added {product.name} to your saved for later items")
+
+    request.session['save_for_later'] = save_for_later
     return redirect(redirect_url)
 
 

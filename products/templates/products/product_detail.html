@@ -67,6 +67,18 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+
+                    <form class="form" action="{% url 'add_to_save_for_later' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+            
+                            <div class="col-12 pl-0">
+                               
+                                <input type="submit" class="btn button-style rounded-0 text-uppercase" value="save for later">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>
                                             
                     {% if request.user.is_superuser %}
                                                 <small class="ml-3">
