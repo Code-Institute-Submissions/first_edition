@@ -1,5 +1,5 @@
 
-Hello {{ order.full_name }}!
+Hello {{ order.full_name }}
 
 This is a confirmation of your order at First Edition. Your order information is below:
 
