@@ -8,18 +8,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
-        <div class="row">
+        <div class="row pt-150">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
+                <h2 class="logo-font mb-4 text-center">Shopping Bag</h2>
                 <hr>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
+            <div class="col-6 offset-md-3">
                 {% if bag_items %}
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
@@ -134,18 +132,36 @@
             </div>
         </div>
     </div>
-<div class="row mb-150">
-    <div class="col-12">
-    {% if save_for_later_items %}
+
     
-    <h2>{{ save_for_later_items }}</h2>
+     
+                {% if save_for_later_items %}
+                <div class="row">
+                    <div class="col-12">
+                        <table class="">
+                                    <tr>
+                                        <th>Saved for later</th>
+                                        
+                                    </tr>
+                                    {% for item in save_for_later_items %}
+                                    <tr>
+                                        <td class="p-3 w-25">
+                                        {% if item.product.image    %}
+                            <img class="w-25" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            {% else %}
+                            <img class="w-25" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
+                            {% endif %}
+                                    </td>
+                                    <td>
+                                        {{ item.product.name }}
+                                    </td>
 
-    {% endif %}
-
-    </div> 
-    </div>
-
-
+                                    </tr>
+                                    {% endfor %}
+                                    </table>
+                    </div>
+                    </div>
+                    {% endif %}
     
 {% endblock %}
 
