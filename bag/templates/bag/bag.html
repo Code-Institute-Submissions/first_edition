@@ -155,7 +155,7 @@
                                     </td>
                                     <td class="saved-for-later-name w-70 pt-4">
                                         {{ item.product.name }}
-                                        <p class="pt-1"><a class="remove-item" id="remove_{{ item.item_id }}">Remove</a>| Add to Bag</p>
+                                        <p class="pt-1"><a class="remove-item-saved" id="remove__{{ item.item_id }}">Remove</a>| Add to Bag</p>
                                     </td>
 
                                     <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
@@ -190,6 +190,18 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+
+     $('.remove-item-saved').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove__')[1];
+        var url = `/bag/remove_from_saved/${itemId}`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)

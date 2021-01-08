@@ -53,6 +53,22 @@ def add_to_save_for_later(request, item_id):
     return redirect(redirect_url)
 
 
+def remove_from_saved(request, item_id):
+    """Remove the item from the saved items"""
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        save_for_later = request.session.get("save_for_later", {})
+        save_for_later.pop(item_id)
+        messages.success(
+            request, f'Removed {product.name} from your saved items')
+        request.session['save_for_later'] = save_for_later
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
+
+
 def adjust_bag(request, item_id):
     """update the quantity of the specified product to the specified amount"""
 

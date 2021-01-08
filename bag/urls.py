@@ -8,4 +8,6 @@ urlpatterns = [
         'add_to_saved/<item_id>', views.add_to_save_for_later, name="add_to_save_for_later"),
     path('adjust/<item_id>', views.adjust_bag, name="adjust_bag"),
     path('remove/<item_id>', views.remove_from_bag, name="remove_from_bag"),
+    path(
+        'remove_from_saved/<item_id>', views.remove_from_saved, name="remove_from_saved"),
 ]
