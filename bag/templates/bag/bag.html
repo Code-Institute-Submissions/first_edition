@@ -131,29 +131,35 @@
                 {% endif %}
             </div>
         </div>
-    </div>
 
     
      
                 {% if save_for_later_items %}
+                <div class="row mt-150">
+                    <div class="col-8 offset-2">
                 <div class="row">
                     <div class="col-12">
-                        <table class="">
-                                    <tr>
-                                        <th>Saved for later</th>
+                        <table class=" w-100 mb-150 grey">
+                                    <tr class="w-75 pl-2">
+                                        <p class="table-header-text">Saved for later</p>
                                         
                                     </tr>
                                     {% for item in save_for_later_items %}
-                                    <tr>
-                                        <td class="p-3 w-25">
+                                    <tr class="saved-table">
+                                        <td class="pl-3 pb-4 w-15 pt-4">
                                         {% if item.product.image    %}
-                            <img class="w-25" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            <img class="" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             {% else %}
-                            <img class="w-25" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
+                            <img class="" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
                             {% endif %}
                                     </td>
-                                    <td>
+                                    <td class="saved-for-later-name w-70 pt-4">
                                         {{ item.product.name }}
+                                        <p class="pt-1"><a class="remove-item" id="remove_{{ item.item_id }}">Remove</a>| Add to Bag</p>
+                                    </td>
+
+                                    <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
+                                        ${{ item.product.price }}
                                     </td>
 
                                     </tr>
@@ -161,6 +167,9 @@
                                     </table>
                     </div>
                     </div>
+                    </div>
+                    </div>
+                
                     {% endif %}
     
 {% endblock %}
@@ -188,5 +197,7 @@
              location.reload();
          });
     })
+
+    
 </script>
 {% endblock %}
