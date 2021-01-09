@@ -155,9 +155,19 @@
                                     </td>
                                     <td class="saved-for-later-name w-70 pt-4">
                                         {{ item.product.name }}
-                                        <p class="pt-1"><a class="remove-item-saved" id="remove__{{ item.item_id }}">Remove</a>| Add to Bag</p>
+                                        <p class="pt-1 mb-0 pb-0"><a class="remove-item-saved" id="remove__{{ item.item_id }}">Remove</a> <form class="" id="update-form1" action="{% url 'add_to_bag' item.item_id %}" method="POST">
+                                           
+                        {% csrf_token %}
+                                            <a href="javascript:{}" class="remove-item-saved-2" id="remove3{{ item.item_id }}" onclick="document.getElementById('update-form1').submit(); return false;">Add to Basket</a>
+                                        <input  type="hidden" name="quantity" value="1">
+                            
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            
+                    </form>
+                            
+                            </p>
+                                        
                                     </td>
-
                                     <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
                                         ${{ item.product.price }}
                                     </td>
@@ -165,7 +175,9 @@
                                     </tr>
                                     {% endfor %}
                                     </table>
-                    </div>
+                        </div>
+
+                                        
                     </div>
                     </div>
                     </div>
@@ -185,6 +197,11 @@
         form.submit();
     })
 
+    $('.update-link1').click(function(e) {
+        var form = $(this).prev('.update-form1');
+        form.submit();
+    })
+
     
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
@@ -197,6 +214,18 @@
              location.reload();
          });
     })
+
+    $('.remove-item-saved-2').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove3')[1];
+        var url = `/bag/remove_from_saved/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+        })
 
      $('.remove-item-saved').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
