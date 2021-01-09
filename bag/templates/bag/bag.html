@@ -1,4 +1,3 @@
-  
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
@@ -48,7 +47,7 @@
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        <form class="form update-quantity-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -75,8 +74,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-link ">Update</a>
-                                        <a class="remove-item" id="remove_{{ item.item_id }}">Remove</a>
+                                        <a class="update-quantity ">Update</a>
+                                        <a class="remove-item-bag" id="remove_bag{{ item.item_id }}">Remove</a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_total:item.quantity }}</p>
@@ -155,18 +154,18 @@
                                     </td>
                                         <td class="saved-for-later-name w-70 pt-4">
                                             {{ item.product.name }}
-                                            <form class="mt-0 pt-0 mb-0 pb-0" id="update-form2" action="{% url 'remove_from_saved' item.item_id %}" method="POST">
+                                            <form class="mt-0 pt-0 mb-0 pb-0" id="remove-from-saved" action="{% url 'remove_from_saved' item.item_id %}" method="POST">
                                                 {% csrf_token %}
                                                     <input  type="hidden" name="no_toast" value="2">
-                                                        <a href="javascript:{}" class="saved-for-later-links" onclick="document.getElementById('update-form2').submit(); return false;">Remove</a>
+                                                        <a href="javascript:{}" class="saved-for-later-links" onclick="document.getElementById('remove-from-saved').submit(); return false;">Remove</a>
                                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                                 
                                             </form>
-                                            <form class="mt-0 pt-0 mb-0 pb-0" id="update-form1" action="{% url 'add_to_bag' item.item_id %}" method="POST">
+                                            <form class="mt-0 pt-0 mb-0 pb-0" id="from-saved-to-bag" action="{% url 'add_to_bag' item.item_id %}" method="POST">
                                                 {% csrf_token %}
                                                 
                                                     <input  type="hidden" name="quantity" value="1">
-                                                    <a href="javascript:{}" class="saved-for-later-links remove-item-saved-2" id="remove3{{ item.item_id }}" onclick="document.getElementById('update-form1').submit(); return false;">Add to Basket</a>
+                                                    <a href="javascript:{}" class="saved-for-later-links remove-saved-to-bag" id="remove_{{ item.item_id }}" onclick="document.getElementById('from-saved-to-bag').submit(); return false;">Add to Basket</a>
                                                     
                                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </form>
@@ -194,26 +193,15 @@
 
 <script type="text/javascript">
     
-    $('.update-link').click(function(e) {
-        var form = $(this).prev('.update-form');
+    $('.update-quantity').click(function(e) {
+        var form = $(this).prev('.update-quantity-form');
         form.submit();
     })
 
-    $('.update-link1').click(function(e) {
-        var form = $(this).prev('.update-form1');
-        form.submit();
-    })
-
-        $('.update-link2').click(function(e) {
-        var form = $(this).prev('.update-form2');
-        form.submit();
-    })
-
-
-    
-    $('.remove-item').click(function(e) {
+   
+    $('.remove-item-bag').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
+        var itemId = $(this).attr('id').split('remove_bag')[1];
         var url = `/bag/remove/${itemId}`;
         var data = {'csrfmiddlewaretoken': csrfToken};
         var no_toast = 1;
@@ -224,9 +212,9 @@
          });
     })
 
-    $('.remove-item-saved-2').click(function(e) {
+    $('.remove-saved-to-bag').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove3')[1];
+        var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove_from_saved_no_toast/${itemId}`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
@@ -235,19 +223,5 @@
              location.reload();
          });
         })
-
-     $('.remove-item-saved').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove__')[1];
-        var url = `/bag/remove_from_saved/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-
-    
 </script>
 {% endblock %}
