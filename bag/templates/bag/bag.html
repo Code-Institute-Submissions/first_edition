@@ -153,28 +153,30 @@
                             <img class="" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
                             {% endif %}
                                     </td>
-                                    <td class="saved-for-later-name w-70 pt-4">
-                                        {{ item.product.name }}
-                                        <p class="pt-1 mb-0 pb-0"><a class="remove-item-saved" id="remove__{{ item.item_id }}">Remove</a> <form class="" id="update-form1" action="{% url 'add_to_bag' item.item_id %}" method="POST">
-                                           
-                        {% csrf_token %}
-                                            <a href="javascript:{}" class="remove-item-saved-2" id="remove3{{ item.item_id }}" onclick="document.getElementById('update-form1').submit(); return false;">Add to Basket</a>
-                                        <input  type="hidden" name="quantity" value="1">
-                            
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            
-                    </form>
-                            
-                            </p>
-                                        
-                                    </td>
-                                    <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
-                                        ${{ item.product.price }}
-                                    </td>
-
+                                        <td class="saved-for-later-name w-70 pt-4">
+                                            {{ item.product.name }}
+                                            <form class="mt-0 pt-0 mb-0 pb-0" id="update-form2" action="{% url 'remove_from_saved' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                    <input  type="hidden" name="no_toast" value="2">
+                                                        <a href="javascript:{}" class="saved-for-later-links" onclick="document.getElementById('update-form2').submit(); return false;">Remove</a>
+                                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                
+                                            </form>
+                                            <form class="mt-0 pt-0 mb-0 pb-0" id="update-form1" action="{% url 'add_to_bag' item.item_id %}" method="POST">
+                                                {% csrf_token %}
+                                                
+                                                    <input  type="hidden" name="quantity" value="1">
+                                                    <a href="javascript:{}" class="saved-for-later-links remove-item-saved-2" id="remove3{{ item.item_id }}" onclick="document.getElementById('update-form1').submit(); return false;">Add to Basket</a>
+                                                    
+                                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </form>
+                                        </td>
+                                        <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
+                                            ${{ item.product.price }}
+                                        </td>
                                     </tr>
                                     {% endfor %}
-                                    </table>
+                                </table>
                         </div>
 
                                         
@@ -202,14 +204,21 @@
         form.submit();
     })
 
+        $('.update-link2').click(function(e) {
+        var form = $(this).prev('.update-form2');
+        form.submit();
+    })
+
+
     
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}`;
         var data = {'csrfmiddlewaretoken': csrfToken};
+        var no_toast = 1;
 
-        $.post(url, data)
+        $.post(url, data, no_toast)
          .done(function() {
              location.reload();
          });
@@ -218,7 +227,7 @@
     $('.remove-item-saved-2').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove3')[1];
-        var url = `/bag/remove_from_saved/${itemId}`;
+        var url = `/bag/remove_from_saved_no_toast/${itemId}`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)

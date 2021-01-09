@@ -11,4 +11,6 @@ urlpatterns = [
     path('remove/<item_id>', views.remove_from_bag, name="remove_from_bag"),
     path(
         'remove_from_saved/<item_id>', views.remove_from_saved, name="remove_from_saved"),
-]
+    path(
+        'remove_from_saved_no_toast/<item_id>', views.remove_from_saved_no_toast, name="removed_from_saved_no_toast"),
+        ]
