@@ -9,9 +9,9 @@
 {% block content %}
         <div class="row pt-150">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4 text-center">Shopping Bag</h2>
-                <hr>
+              
+                <h2 class=" mb-75 text-center">Shopping Bag</h2>
+                
             </div>
         </div>
 
@@ -74,8 +74,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-quantity ">Update</a>
-                                        <a class="remove-item-bag" id="remove_bag{{ item.item_id }}">Remove</a>
+                                        <a class="update-quantity cursor ">Update</a>
+                                        <a class="remove-item-bag cursor" id="remove_bag{{ item.item_id }}">Remove</a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price | calc_total:item.quantity }}</p>
@@ -165,7 +165,7 @@
                                                 {% csrf_token %}
                                                 
                                                     <input  type="hidden" name="quantity" value="1">
-                                                    <a href="javascript:{}" class="saved-for-later-links remove-saved-to-bag" id="remove_{{ item.item_id }}" onclick="document.getElementById('from-saved-to-bag').submit(); return false;">Add to Basket</a>
+                                                    <a href="javascript:{}" class="saved-for-later-links remove-saved-to-bag" id="remove_{{ item.item_id }}" onclick="document.getElementById('from-saved-to-bag').submit(); return false;">Move to Basket</a>
                                                     
                                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                             </form>
