@@ -397,6 +397,10 @@ color:white;
     
 }
 
+.no-hover-change:hover {
+    color:#ffffff;
+}
+
 .hero-button-1 {
     background-color: #FF7F50;
     border-color:#FF7F50 ;
