@@ -60,6 +60,17 @@ def all_products(request):
     return render(request, "products/products.html", context)
 
 
+def product_bestsellers(request):
+
+    product_bestsellers = Product.objects.filter(is_bestseller=True)
+
+    context = {
+        "product_bestsellers":product_bestsellers,
+        }
+
+    return render(request, "products/product_bestsellers.html", context)
+
+
 def product_detail(request, product_id):
     """ A view to show a single product details """
 

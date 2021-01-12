@@ -4,7 +4,7 @@ from products.models import Product, Category
 
 def index(request):
     """ A view that will return you to the index page """
-    product_bestsellers = Product.objects.filter(category=6)
+    product_bestsellers = Product.objects.filter(is_bestseller=True)
     product_philosophy = Product.objects.filter(category=3)
     product_fiction = Product.objects.filter(category=2)
     product_history = Product.objects.filter(category=1)

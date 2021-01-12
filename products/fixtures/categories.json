@@ -47,15 +47,5 @@
             "friendly_name":"Fantasy & Sci Fi"
         }
 
-    },
-
-      {
-        "pk":6,
-        "model":"products.category",
-        "fields": {
-            "name":"bestsellers",
-            "friendly_name":"Bestsellers"
-        }
-
     }
 ]
