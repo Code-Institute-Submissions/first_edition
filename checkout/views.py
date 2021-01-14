@@ -134,9 +134,9 @@ def checkout(request):
 
     template = 'checkout/checkout.html'
     context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
+        "order_form": order_form,
+        "stripe_public_key": stripe_public_key,
+        "client_secret": intent.client_secret,
     }
 
     return render(request, template, context)
@@ -166,15 +166,14 @@ def checkout_success(request, order_number):
             user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
+        Your order number is {order_number} and a confirmation \
         email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
-
     template = 'checkout/checkout_success.html'
     context = {
-        'order': order,
+        "order": order,
     }
 
     return render(request, template, context)
