@@ -178,3 +178,6 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+# def User_review_and_rating(request):

@@ -84,14 +84,16 @@ class OrderLineItem(models.Model):
         return f'ISBN {self.product.isbn} on order {self.order.order_number}'
 
 
-# class Review(models.Model):
-#     user = models.ForeignKey(
-#         "UserProfile", null=True, blank=True, on_delete=models.SET_NULL)
-#     product = models.ForeignKey(
-#         "Product", null=True, blank=True, on_delete=models.SET_NULL)
-#     rating = models.DecimalField(
-#         max_digits=1, null=True, blank=True)
-#     review_text = models.TextField()
+class Review(models.Model):
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL,
+        null=True, blank=True)
+    product = models.ForeignKey(
+        Product, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="reviews")
+    rating = models.DecimalField(
+        max_digits=1, decimal_places=1, null=True, blank=True)
+    review_text = models.TextField()
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
