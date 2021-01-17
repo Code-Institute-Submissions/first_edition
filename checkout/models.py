@@ -47,9 +47,7 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * (
-                 settings.STANDARD_DELIVERY_PERCENTAGE / 100
-            )
+            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
@@ -91,9 +89,21 @@ class Review(models.Model):
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL,
         related_name="reviews")
-    rating = models.DecimalField(
-        max_digits=1, decimal_places=1, null=True, blank=True)
-    review_text = models.TextField()
+    review_text = models.TextField(null=True)
 
     def __str__(self):
-        return self.name
+        return self.review_text
+
+
+class Rating(models.Model):
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL,
+        null=True, blank=True)
+    product = models.ForeignKey(
+        Product, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="rating")
+    rating = models.DecimalField(
+        max_digits=1, decimal_places=1, null=True, blank=True)
+
+    def __str__(self):
+        return self.rating

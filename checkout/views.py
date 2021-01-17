@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, Review
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
@@ -177,6 +177,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
-
-# def User_review_and_rating(request):

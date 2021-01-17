@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
+from checkout.models import Review
 
 
 def all_products(request):
@@ -65,7 +66,7 @@ def product_bestsellers(request):
     product_bestsellers = Product.objects.filter(is_bestseller=True)
 
     context = {
-        "product_bestsellers":product_bestsellers,
+        "product_bestsellers": product_bestsellers,
         }
 
     return render(request, "products/product_bestsellers.html", context)
@@ -75,10 +76,15 @@ def product_detail(request, product_id):
     """ A view to show a single product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    review = Review.objects.all()
+
+    if request.GET:
+        review = request.GET['review_sent']
 
     context = {
         "product": product,
-    }
+        "review": review,
+        }
 
     return render(request, "products/product_detail.html", context)
 
