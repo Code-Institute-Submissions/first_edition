@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 from checkout.models import Review
 
 
@@ -78,8 +78,13 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     review = Review.objects.all()
 
-    if request.GET:
-        review = request.GET['review_sent']
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=product_detail)
+        if form.is_valid():
+            new_review = form.save()
+            messages.success(request, 'Your review has been posted.')
+        else:
+            messages.error(request, "Review has failed to Post.")
 
     context = {
         "product": product,
