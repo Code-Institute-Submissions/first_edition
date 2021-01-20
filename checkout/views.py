@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItem, Review
+from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
@@ -75,7 +75,6 @@ def checkout(request):
                                 order=order,
                                 product=product,
                                 quantity=quantity,
-                                product_size=size,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:

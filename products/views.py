@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
-from .forms import ProductForm, ReviewForm
-from checkout.models import Review
+from .forms import ProductForm
+from checkout.models import Review, ReviewForm, Order, OrderLineItem
+from profiles.models import UserProfile
 
 
 def all_products(request):
@@ -76,22 +78,39 @@ def product_detail(request, product_id):
     """ A view to show a single product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.all()
-
-    if request.method == 'POST':
-        form = ReviewForm(request.POST, instance=product_detail)
-        if form.is_valid():
-            new_review = form.save()
-            messages.success(request, 'Your review has been posted.')
-        else:
-            messages.error(request, "Review has failed to Post.")
+    review = Review.objects.filter(product=product_id)
+    is_buyer = False
+    lines = OrderLineItem.objects.filter(product=product)
+    for line in lines:
+        order = line.order
+        if order.user_profile == request.user.userprofile:
+            is_buyer = True
 
     context = {
         "product": product,
         "review": review,
+        "is_buyer": is_buyer
         }
-
     return render(request, "products/product_detail.html", context)
+
+
+def addcomment(request, product_id):
+    url = request.META.get('HTTP_REFERER')
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            profile = UserProfile.objects.get(user=request.user)
+            data = form.save()
+            data.product_id = product_id
+            data.user = profile
+            data.save()
+            messages.success(request, 'Your review has been posted.')
+            return HttpResponseRedirect(url)
+        else:
+            messages.error(request, "error in making this review")
+
+    return HttpResponseRedirect(url)
 
 
 @login_required

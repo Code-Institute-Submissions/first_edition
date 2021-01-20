@@ -5,6 +5,7 @@ from django.conf import settings
 from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
+from django.forms import ModelForm
 
 
 class Order(models.Model):
@@ -62,6 +63,9 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
+    def get_user_name(self):
+        return self.user_profile
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
@@ -89,10 +93,16 @@ class Review(models.Model):
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL,
         related_name="reviews")
-    review_text = models.TextField(null=True)
+    review_text = models.TextField(blank=True)
 
     def __str__(self):
         return self.review_text
+
+
+class ReviewForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ["review_text"]
 
 
 class Rating(models.Model):

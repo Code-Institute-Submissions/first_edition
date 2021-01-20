@@ -112,12 +112,18 @@
                     <p class="">ISBN: {{ product.isbn }}</p>
                     <p class="">Length: {{ product.num_pages }} pages</p>
                     <p class="">Publisher: {{ product.publisher }}</p>
-                    
-                    <form class="mt-3" action="{% url 'product_detail' product.id %}" method="POST" id="">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn button-style no-hover-change rounded-0 text-uppercase float-right">Update Information</button>
-                </form>
+                    {% for comment in review %}
+                    <p>{{ comment.review_text }}</p>
+                    {% endfor %}
+                    <form class="review-form" action="{% url 'addcomment' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+						<textarea class="input" name="review_text" placeholder="Your review"></textarea>A
+                        </div>
+                        <button class="primary-btn" type="submit">Submit</button>
+                    </form>
+                    {{ product.id }}
+                   
                     </div>
 
                     
