@@ -112,24 +112,25 @@
                     <p class="">ISBN: {{ product.isbn }}</p>
                     <p class="">Length: {{ product.num_pages }} pages</p>
                     <p class="">Publisher: {{ product.publisher }}</p>
-                    {% for comment in review %}
+                   
+
+                                        <div class="pt-3">
+                        <h4 class="product-detail-txt">Customer Reviews</h4>
+                         {% for comment in review %}
+                         
                     <p>{{ comment.review_text }}</p>
                     {% endfor %}
-                    <form class="review-form" action="{% url 'addcomment' product.id %}" method="POST">
+                                             
+                     <h6 class="">Write a review</h6>
+                    <form class="" action="{% url 'addcomment' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
-						<textarea class="input" name="review_text" placeholder="Your review"></textarea>A
+						<textarea class="input w-75" name="review_text" placeholder="Your review"></textarea>
                         </div>
                         <button class="primary-btn" type="submit">Submit</button>
-                    </form>
-                    {{ product.id }}
-                   
+                    </form> 
+                    </div>               
                     </div>
-
-                    
-
-                
-    
                 </div>
             </div>
         </div>

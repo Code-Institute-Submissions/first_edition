@@ -90,10 +90,13 @@ class Review(models.Model):
     user = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL,
         null=True, blank=True)
+    subject = models.CharField(max_length=50, blank=True)
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL,
         related_name="reviews")
-    review_text = models.TextField(blank=True)
+    review_text = models.CharField(max_length=500, blank=True)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.review_text
