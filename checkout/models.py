@@ -105,7 +105,7 @@ class Review(models.Model):
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = ["review_text"]
+        fields = ["review_text", "subject"]
 
 
 class Rating(models.Model):

@@ -117,14 +117,21 @@
                                         <div class="pt-3">
                         <h4 class="product-detail-txt">Customer Reviews</h4>
                          {% for comment in review %}
-                         
+                    <h5>{{ comment.create_at }}</h5>
+                    {{ comment.subject }}
                     <p>{{ comment.review_text }}</p>
+                    {{ comment.user }}
+                    {% if user.session == comment.user %}
+                    <a href="{% url 'edit_comment' product.id %}">Edit</a>
+                    <a href="{% url 'delete_comment' product.id %}">Delete</a>
+                    {% endif %}
                     {% endfor %}
                                              
                      <h6 class="">Write a review</h6>
-                    <form class="" action="{% url 'addcomment' product.id %}" method="POST">
+                    <form class="" action="{% url 'add_comment' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
+                        <input type="text " name="subject" placeholder="title">
 						<textarea class="input w-75" name="review_text" placeholder="Your review"></textarea>
                         </div>
                         <button class="primary-btn" type="submit">Submit</button>
@@ -135,6 +142,4 @@
             </div>
         </div>
     </div>
-
-    
 {% endblock %}

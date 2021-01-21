@@ -94,7 +94,7 @@ def product_detail(request, product_id):
     return render(request, "products/product_detail.html", context)
 
 
-def addcomment(request, product_id):
+def add_comment(request, product_id):
     url = request.META.get('HTTP_REFERER')
 
     if request.method == 'POST':
@@ -112,6 +112,24 @@ def addcomment(request, product_id):
 
     return HttpResponseRedirect(url)
 
+
+def edit_comment(request, product_id):
+    url = request.META.get('HTTP_REFERER')
+    product = get_object_or_404(Product, pk=product_id)
+    review = Review.objects.filter(product=product_id)
+    user_session = UserProfile.objects.get(user=request.user)
+    print("review")
+
+    return HttpResponseRedirect(url)
+
+def delete_comment(request, product_id):
+    if not request.user.is_superuser:
+        messages.error(request, "Sorry, only store owners can do that.")
+        return redirect(reverse("home"))
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
 
 @login_required
 def add_product(request):
