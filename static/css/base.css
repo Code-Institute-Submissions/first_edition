@@ -487,6 +487,15 @@ color:white;
     color:white;
 }
 
+.checked {
+    color:red;
+}
+.star-style {
+        background-color: inherit !important;
+    border: 0 !important;
+
+}
+
 /* =====================
            Bag
    ===================== */

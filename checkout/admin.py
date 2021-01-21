@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem, Review
+from .models import Order, OrderLineItem, Review, Rating
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -41,3 +41,4 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Review, ReviewAdmin)
+admin.site.register(Rating)

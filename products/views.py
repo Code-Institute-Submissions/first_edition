@@ -1,12 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
-from checkout.models import Review, ReviewForm, Order, OrderLineItem
+from checkout.models import Review, ReviewForm, Order, OrderLineItem, Rating
 from profiles.models import UserProfile
 
 
@@ -81,6 +81,7 @@ def product_detail(request, product_id):
     review = Review.objects.filter(product=product_id)
     is_buyer = False
     lines = OrderLineItem.objects.filter(product=product)
+    rating = Rating.objects.filter(product=product_id)
     for line in lines:
         order = line.order
         if order.user_profile == request.user.userprofile:
@@ -89,7 +90,8 @@ def product_detail(request, product_id):
     context = {
         "product": product,
         "review": review,
-        "is_buyer": is_buyer
+        "is_buyer": is_buyer,
+        "rating": rating,
         }
     return render(request, "products/product_detail.html", context)
 
@@ -130,6 +132,21 @@ def delete_comment(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def rate_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    url = request.META.get('HTTP_REFERER')
+    if request.method == 'POST':
+        el_id = request.POST.get('el_id')
+        val = request.POST.get('val')
+        print(val)
+        rating = Rating.objects.get(id=el_id)
+        rating.score = val
+        rating.save()
+        return JsonResponse({'success':'true', 'score': val}, safe=False)
+    return JsonResponse({'success':'false'})
+
 
 @login_required
 def add_product(request):

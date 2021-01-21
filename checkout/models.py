@@ -6,6 +6,7 @@ from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
 from django.forms import ModelForm
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Order(models.Model):
@@ -115,8 +116,12 @@ class Rating(models.Model):
     product = models.ForeignKey(
         Product, null=True, blank=True, on_delete=models.SET_NULL,
         related_name="rating")
-    rating = models.DecimalField(
-        max_digits=1, decimal_places=1, null=True, blank=True)
+    score = models.IntegerField(
+        default=0, validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
 
     def __str__(self):
-        return self.rating
+        return str(self.pk)
