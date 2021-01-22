@@ -70,11 +70,11 @@
         <div class="col-6 offset-md-3">
                 <div class="scroll-img-container padding-10 grey">
                     {% for product in product_fiction %}
-                        {% if product.rating > 4.00 %}
+                      
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
-                        {% endif %}
+                    
                     {% endfor %}
             </div>
         </div>
@@ -104,11 +104,11 @@
         <div class="col-6 offset-md-3">
                 <div class="scroll-img-container padding-10 grey">
                     {% for product in product_history %}
-                        {% if product.rating > 4.00 %}
+                       
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
-                        {% endif %}
+                       
                     {% endfor %}
             </div>
         </div>
@@ -138,11 +138,11 @@
         <div class="col-6 offset-md-3">
                 <div class="scroll-img-container padding-10 grey">
                     {% for product in product_philosophy %}
-                        {% if product.rating > 4.00 %}
+                    
                         <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
                         </a>
-                        {% endif %}
+                  
                     {% endfor %}
             </div>
         </div>

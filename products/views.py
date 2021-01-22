@@ -4,9 +4,9 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Rating
 from .forms import ProductForm
-from checkout.models import Review, ReviewForm, Order, OrderLineItem, Rating
+from checkout.models import Review, ReviewForm, OrderLineItem
 from profiles.models import UserProfile
 
 
@@ -98,7 +98,6 @@ def product_detail(request, product_id):
 
 def add_comment(request, product_id):
     url = request.META.get('HTTP_REFERER')
-
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
@@ -132,20 +131,6 @@ def delete_comment(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
-
-
-def rate_product(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
-    url = request.META.get('HTTP_REFERER')
-    if request.method == 'POST':
-        el_id = request.POST.get('el_id')
-        val = request.POST.get('val')
-        print(val)
-        rating = Rating.objects.get(id=el_id)
-        rating.score = val
-        rating.save()
-        return JsonResponse({'success':'true', 'score': val}, safe=False)
-    return JsonResponse({'success':'false'})
 
 
 @login_required
