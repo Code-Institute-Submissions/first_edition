@@ -1,6 +1,5 @@
 from django import forms
 from .models import Product, Category
-from checkout.models import Review
 
 
 class ProductForm(forms.ModelForm):

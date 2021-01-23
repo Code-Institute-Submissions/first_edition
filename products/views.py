@@ -4,9 +4,11 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-from .models import Product, Category, Rating
+from .models import Product, Category
 from .forms import ProductForm
-from checkout.models import Review, ReviewForm, OrderLineItem
+from django.template import loader
+from checkout.forms import RateForm
+from checkout.models import Review, ReviewForm, OrderLineItem, Rating
 from profiles.models import UserProfile
 
 
@@ -96,6 +98,18 @@ def product_detail(request, product_id):
     return render(request, "products/product_detail.html", context)
 
 
+def view_comments(request, product_id):
+    reviews = Review.objects.filter(product=product_id)
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        "reviews": reviews,
+        "product": product,
+    }
+    return render(request, "products/reviews.html", context)
+
+
+
 def add_comment(request, product_id):
     url = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
@@ -123,6 +137,7 @@ def edit_comment(request, product_id):
 
     return HttpResponseRedirect(url)
 
+
 def delete_comment(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
@@ -131,6 +146,34 @@ def delete_comment(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def rate(request, product_id):
+
+    product = Product.objects.get(id=product_id)
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():
+            profile = UserProfile.objects.get(user=request.user)
+            rate = form.save(commit=False)
+            rate.user = profile
+            rate.produt = product
+            rate.save()
+            messages.success(
+                request, 'You have successfully rated this product.')
+            return redirect(
+                reverse('product_detail', args=[product_id]))
+        else:
+            form = RateForm()
+
+    template = loader.get_template('products/product_detail.html')
+
+    context = {
+        'form': form,
+        'product': product,
+        }
+
+    return HttpResponse(template.render(context, request))
 
 
 @login_required

@@ -106,3 +106,27 @@ class ReviewForm(ModelForm):
     class Meta:
         model = Review
         fields = ["review_text", "subject"]
+
+
+RATING_CHOICES = [
+    (1, '1'),
+    (2, '2'),
+    (3, '3'),
+    (4, '4'),
+    (5, '5')
+]
+
+
+class Rating(models.Model):
+    user = models.ForeignKey(
+        UserProfile, on_delete=models.SET_NULL,
+        null=True, blank=True)
+    product = models.ForeignKey(
+        Product, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="rating")
+    rate = models.PositiveSmallIntegerField(choices=RATING_CHOICES)
+    likes = models.PositiveIntegerField(default=0)
+    dislikes = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.user.user

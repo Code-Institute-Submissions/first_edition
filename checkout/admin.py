@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem, Review
+from .models import Order, OrderLineItem, Review, Rating
 
+
+admin.site.register(Rating)
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
@@ -41,4 +43,3 @@ class ReviewAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Review, ReviewAdmin)
-
