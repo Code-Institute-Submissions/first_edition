@@ -10,8 +10,8 @@
 <div class="container-fluid pt-150 light-grey pb-5">
     <div class="row">
         <div class="col-6 offset-3">
-        
         <div class="row mt-4 mb-4">
+            <!-- A dropdown box which allows the user to sort products in acending or descending order in name and price -->
                         <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                             <div class="sort-select-wrapper w-50">
                                 <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -20,10 +20,6 @@
                                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
                                     <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                                     <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                    
-                                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                                
                                 </select>
                             </div>
                         </div>

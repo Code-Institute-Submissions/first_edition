@@ -38,7 +38,6 @@
                     <h2 class="logo-font align-right text-center">The First Edition</h2>
                 </a>
             </div>
-
             <div class="col-lg-4  py-2">
                 <div class="input-group ">
                  <form onsubmit="event.preventDefault();" role="search" method="GET" action="{% url 'products' %}" class="search-form">
@@ -109,6 +108,7 @@
             </div>
    </header>
      {% if messages %}
+     <!-- Toasts are used to tell the user if their interaction on the front end with the backend has successfully achieved their aim, such as adding to the basket, writing a review or rating a product. -->
         <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
