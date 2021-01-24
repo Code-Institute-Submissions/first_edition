@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-    
+    // Makes it so that the user can only buy between 1-5 products at a time by disabling the button beyond that range
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
         var minusDisabled = currentValue < 2;
@@ -9,30 +9,30 @@
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
-
+// makes it so you cant go beyond range by using up or down arrow on button
     var allQtyInputs = $('.qty_input');
     for(var i = 0; i < allQtyInputs.length; i++){
         var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
-    
+    // Ensures up and down buttons are functional
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
-    
+    // Handles the increase quantity for the button
     $('.increment-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       var currentValue = parseInt($(closestInput).val());
+       var currentValue = parseInt($(closestInput).val()); // Caches the current value, then will increase it by +1
        $(closestInput).val(currentValue + 1);
        var itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
     });
 
-    
+    // Handles the decrease quantity for the button
     $('.decrement-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];

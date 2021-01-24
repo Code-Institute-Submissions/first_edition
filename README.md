@@ -130,6 +130,9 @@ if two users bought something at the same time, it would create a problem.
 **Different formats for certain books:** I also wanted to make it so that some books would have multiple formats, such as a paperback and hardhack. They would require a different price image and ISBN to its counterpart. When I asked my mentor, I was 
 told due to time constraints it probably wouldn't be worth adding this feature.
 
+**Having a visually appealing star rating system:** I actually made an attempt at making this as you can see in my commits. However the data needed to be posted through javascripts AJAX. This had proven to be problematic as I couldn't find a way
+to post the products id through AJAX, so I had to scrap the system due to time constrains for a visually less appealing rating system. Otherwise, the functionality is very similiar.
+
 
 
 # Technologies Used
@@ -156,8 +159,6 @@ colours etc.
 
 
 # Testing 
-
-
 
 
 # Deployment

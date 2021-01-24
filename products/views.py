@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
+# Loader Loads and returns a template
 from django.template import loader
 from checkout.forms import RateForm
 from checkout.models import Review, ReviewForm, OrderLineItem, Rating
@@ -13,7 +14,9 @@ from profiles.models import UserProfile
 
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """ This view renders the products template, it returns
+     all products but may be filtered in the url request by category.
+      It also handles search queries from the searchbar."""
 
     products = Product.objects.all()
     query = None
@@ -66,6 +69,8 @@ def all_products(request):
 
 
 def product_bestsellers(request):
+    """ Since product bestsellers is a boolean instead
+     of a category, I made its own view to render this url request """
 
     product_bestsellers = Product.objects.filter(is_bestseller=True)
 
@@ -77,7 +82,11 @@ def product_bestsellers(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show a single product details """
+    """ This view shows a single product details.
+     It includes the Rating and Review models.
+      The is_buyer boolean is used to determine
+    if the user has purchased a product. If they have,
+     they'll be able to rate and review products. """
 
     product = get_object_or_404(Product, pk=product_id)
     review = Review.objects.filter(product=product_id)
@@ -99,6 +108,8 @@ def product_detail(request, product_id):
 
 
 def view_comments(request, product_id):
+    """ A simple view to allow the user
+     to be able to see other users comments """
     reviews = Review.objects.filter(product=product_id)
     product = get_object_or_404(Product, pk=product_id)
 
@@ -109,8 +120,13 @@ def view_comments(request, product_id):
     return render(request, "products/reviews.html", context)
 
 
-
+@login_required
 def add_comment(request, product_id):
+    """ A view to be able to add a comment.
+     The form will bind to the Product and the UserProfile models
+      upon successful completion. Http Referer allows
+       a redirect back to the prior url. """
+
     url = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -128,6 +144,7 @@ def add_comment(request, product_id):
     return HttpResponseRedirect(url)
 
 
+@login_required
 def edit_comment(request, product_id):
     url = request.META.get('HTTP_REFERER')
     product = get_object_or_404(Product, pk=product_id)
@@ -138,6 +155,7 @@ def edit_comment(request, product_id):
     return HttpResponseRedirect(url)
 
 
+@login_required
 def delete_comment(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
@@ -148,7 +166,9 @@ def delete_comment(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def rate(request, product_id):
+    """ view that allows to rate a product, similiar to reveiw """
 
     product = Product.objects.get(id=product_id)
     if request.method == 'POST':
@@ -178,6 +198,10 @@ def rate(request, product_id):
 
 @login_required
 def add_product(request):
+    """ Allows the functionality of a superuser
+     addinng products to the website
+      without having to use the Django Administration """
+
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
@@ -205,6 +229,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
+    """ Allows product editing on website """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
@@ -234,6 +259,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
+    """ Allows product removing on website """
     if not request.user.is_superuser:
         messages.error(request, "Sorry, only store owners can do that.")
         return redirect(reverse("home"))
