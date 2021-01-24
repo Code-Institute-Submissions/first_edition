@@ -9,6 +9,13 @@
    ===================== */
 
 
+::selection {
+  background: #ffa280
+}
+::-moz-selection {
+  background:#ffa280
+}
+
 .light-beige {
     background-color: #fbf3e4;
 }
@@ -83,6 +90,10 @@ body {
 }
 .pt-250 {
     padding-top: 250px;
+}
+
+.pl-10 {
+    padding-left:27.5px;
 }
 
 .mt-350 {
@@ -475,6 +486,10 @@ color:white;
 .image-product-detail {
     height:380px;
     width:260px;
+}
+
+.product-detail-name {
+    font-size:4rem;
 }
 
 .product-detail-txt {
