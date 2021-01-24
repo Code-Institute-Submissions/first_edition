@@ -33,21 +33,21 @@
    <header class="container-fluid fixed-top charcaol">
 
         <div class="row charcoal pt-10px ruda">
-            <div class="col-lg-4 text-lg-left py-1">
+            <div class="col-lg-4 col-md-12 text-lg-left py-1">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font align-right text-center">The First Edition</h2>
                 </a>
             </div>
-            <div class="col-lg-4  py-2">
-                <div class="input-group ">
+            <div class="col-lg-4 col-md-12 center-searchbar-md  py-2">
+                <div class="input-group center-searchbar-lg ">
                  <form onsubmit="event.preventDefault();" role="search" method="GET" action="{% url 'products' %}" class="search-form">
                         <input id="search" class="search-input" type="search" placeholder="Search all Products" autofocus required />
                             <button type="submit" class="search-button">Go</button>    
                     </form>
                     </div>
             </div>
-            <div class="col-lg-4 my-auto py-1 py-lg-0">
-            <ul class="nav d-flex align-items-end">
+            <div class="col-lg-4 col-md-12 my-auto py-1 py-lg-0 center-text-lg">
+            <ul class="nav d-flex align-items-end view-width-small-text center-text-lg ">
                         {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                             <li class="nav-item">
@@ -143,14 +143,14 @@
    <footer class="site-footer">
        <div class="container-fluid">
     <div class="row">
-        <div class="col-6 offset-md-3">
+        <div class=" col-12 col-xl-6 offset-xl-3">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 center-text-md">
             <h6>About</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante neque, ultricies a nisi vel, gravida porttitor diam. Aliquam erat volutpat. Proin nisl ante, mollis vitae lacus eget, sodales vestibulum nulla. Cras quis urna ac justo euismod commodo. Nam accumsan feugiat quam, scelerisque volutpat urna consectetur aliquet. Integer convallis sapien ut rutrum ultricies. Suspendisse justo elit, tempus non consectetur eget, mollis nec nisl.</p>
+            <p class="text-justify padding-sm-foter">Lorem ipsum dolor sit amet,que volutpat urna consectetur aliquet. Integer convallis sapien ut rutrum ultricies. Suspendisse justo elit, tempus non consectetur eget, mollis nec nisl.</p>
           </div>
 
-          <div class="col-xs-6 col-md-3">
+          <div class="col-sm-12 col-md-3 center-text-md">
             <h6>Book Categories</h6>
             <ul class="footer-links">
               <li><a href="{% url 'products' %}?category=fiction">Fiction</a></li>
@@ -162,8 +162,8 @@
           </div>
 
         
-          <div class="col-xs-6 col-md-3">
-            <h6>Quick Links</h6>
+          <div class="col-sm-12 col-md-3 center-text-md">
+            <h6 class="center-text-md">Quick Links</h6>
             <ul class="footer-links">
               <li><a href="#">About Us</a></li>
               <li><a href="#">Contact Us</a></li>
@@ -175,12 +175,12 @@
 
       
         <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
+          <div class="col-md-8 col-sm-6 col-sm-12">
             <p class="copyright-text">@2020 The First Edition ltd
             </p>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="col-md-4 col-sm-12">
             <ul class="social-icons">
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>

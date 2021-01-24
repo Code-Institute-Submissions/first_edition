@@ -714,6 +714,29 @@ color:white;
 }
 }
 
+@media (max-width: 1171px) {
+   .view-width-small-text {
+
+    font-size:0.75rem;
+}
+}
+
+@media (max-width: 992px) {
+   .center-text-lg {
+
+    justify-content: center;
+  display: flex;
+}
+}
+
+@media (max-width: 992px) {
+   .center-searchbar-lg {
+
+    justify-content: center;
+  display: flex;
+}
+}
+
 @media (max-width:767px)
 {
   .social-icons li.title
@@ -731,6 +754,13 @@ color:white;
     margin-bottom:30px
   }
 }
+
+@media (max-width: 768px) {
+   .center-text-md {
+
+    text-align: center;
+}
+}
 @media (max-width:767px)
 {
   .site-footer
@@ -741,4 +771,10 @@ color:white;
   {
     text-align:center
   }
+}
+@media (max-width: 768px) {
+   .padding-sm-foter {
+
+    padding: 0 30px;
+}
 }
