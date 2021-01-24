@@ -26,13 +26,11 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 grey pt-5">
                 <div class="">
-                    <h4 class="product-detail-name roboto">{{ product.name }}</h4>
+                    <h4 class="product-detail-name roboto pr-3">{{ product.name }}</h4>
                     <p class="">by {{ product.author }}</p>
-                    <p class="">
-                                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                        <i class="fas fa-tag"></i>{{ product.category.friendly_name }}
-                                                    </a>
-                                                </p>
+                    <p class="text-muted">
+                        <i class="fas fa-tag pr-1"></i>{{ product.category.friendly_name }}
+                        </p>
 
                      <p class="lead mb-0 text-left">{{ product.book_format }} -<span class=" font-weight-bold"> ${{ product.price }}</span></p>
 
@@ -52,19 +50,11 @@
                 <div class="col- pt-3">
                     <form class="form" action="{% url 'add_to_save_for_later' product.id %}" method="POST">
                         {% csrf_token %}
-            
-                            
-                               
                                 <input type="submit" class="btn button-style rounded-0" value="Save for later">
-                           
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
                 </div>
                     </div>
-
-            
-                       
-
                         <div class="row">
                     <div class="col-12 grey">
 
@@ -76,9 +66,10 @@
               </div>
                         <button type="submit" name="action" class="button-style btn">Rate</button>
                 </form>
+
                         <div class="pt-2">
-                        {% if Reviews >= 1 %}
-                            <a href="{% url 'reviews' product.id %}">Check {{reviews.int}}</a>
+                        {% if review|length > 0 %}
+                            <a href="{% url 'view_comments' product.id %}">See reviews ({{ review|length }}) available</a>
                         {% else %}
                         <p>There have been no reviews for this product yet</p>
                         {% endif %}
@@ -89,14 +80,14 @@
                         <div class="row">
                     <div class="col-12 grey pt-5">
                              <h4 class="product-detail-txt mt-4">Description</h4>
-                    <p class="mt-3 ">{{ product.description }}</p>
+                    <p class="mt-3 pr-3 ">{{ product.description }}</p>
 
 
                 
                     {% if product.professional_endorsement  %}
                     <div class="pt-3">
                         <h4 class="product-detail-txt">Endorements</h4>
-                        <p class="mt-3 ">"{{ product.professional_endorsement }}"</p>   
+                        <p class="mt-3 pr-3">"{{ product.professional_endorsement }}"</p>   
                         </div>                     
                     {% endif %}
                         <div class="pb-50">
