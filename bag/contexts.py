@@ -5,6 +5,9 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """ This offers the functionality to keep track of whats inside the bag.
+     It has a context processor which means it can be accessed
+      through all templates throughout the website. """
 
     bag_items = []
     total = 0

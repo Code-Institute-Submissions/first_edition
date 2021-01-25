@@ -6,12 +6,13 @@ from products.models import Product
 
 
 def view_bag(request):
-    """ A view that will render the bag """
+    """ A view that will render the bag and its contents """
     return render(request, "bag/bag.html")
 
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the  product to the  bag """
+    """ Add a quantity of the  product to the  bag, in product detail the quantity
+     is set to one but its adjustable in the bag template."""
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -33,7 +34,8 @@ def add_to_bag(request, item_id):
 
 def add_to_save_for_later(request, item_id):
     """ Saves a product in the bag template
-     for later purchase but doesn't actually add to shopping cart """
+     for later purchase but doesn't actually add to shopping cart.
+      Similiar functionality to the bag. """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = 1
@@ -72,7 +74,8 @@ def remove_from_saved(request, item_id):
 
 
 def remove_from_saved_no_toast(request, item_id):
-    """Remove the item from the saved items"""
+    """ Similiar to above, except when the user presses move to basket link, I
+    dont want them to see the same toast """
 
     try:
         save_for_later = request.session.get("save_for_later", {})
