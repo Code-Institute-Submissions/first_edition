@@ -792,3 +792,19 @@ color:white;
     text-align: center;
 }
 }
+
+ @media (max-width:576px) {
+   .resize-img-sm {
+
+    height:300px;
+    width:115px;
+    
+}
+} 
+
+@media (max-width:992px) {
+   .mt-300-lg {
+
+    margin-top:300px;
+}
+}

@@ -11,12 +11,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid mb-150">
+    <div class="container-fluid mb-150 mt-300-lg">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-2 offset-lg-3 grey pt-5">
+            <div class="col-4 col-md-3 offset-md-1 col-lg-3 col-xl-2 offset-xl-3 offset-lg-2 grey pt-5">
                     {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank" class=" ">
-                            <img class=" img-fluid image-product-detail ml-2" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        <a href="{{ product.image.url }}" target="_blank" class=" ceneter-image-sm ">
+                            <img class=" img-fluid image-product-detail resize-img-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
                         </a>
                         {% else %}
                         
@@ -24,7 +24,7 @@
                     
                     {% endif %}
             </div>
-            <div class="col-12 col-md-6 col-lg-4 grey pt-5">
+            <div class="col-8 col-md-7 col-lg-5 col-xl-4 grey pt-5">
                 <div class="">
                     <h4 class="product-detail-name roboto pr-3">{{ product.name }}</h4>
                     <p class="">by {{ product.author }}</p>
@@ -37,7 +37,7 @@
                </div>
 
                 <div class="row">
-                    <div class="col-3 grey pt-3">
+                    <div class="col-12 col-md-3 grey pt-3">
                         
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
@@ -47,7 +47,7 @@
                         
                     </form>
                 </div>
-                <div class="col- pt-3">
+                <div class="col-12 col-md-3 pt-3">
                     <form class="form" action="{% url 'add_to_save_for_later' product.id %}" method="POST">
                         {% csrf_token %}
                                 <input type="submit" class="btn button-style rounded-0" value="Save for later">
@@ -107,6 +107,6 @@
                </div>
                
                </div>
-               </div>
+               
                
 {% endblock %}
