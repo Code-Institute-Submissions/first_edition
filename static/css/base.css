@@ -72,6 +72,11 @@ body {
     color:#FF7F50;
 }
 
+.large-text {
+    font-size:3rem;
+}
+
+
 /* =====================
     Margins and Paddings
    ===================== */

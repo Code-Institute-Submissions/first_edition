@@ -6,7 +6,7 @@
 {% block content %}
 <div class="row pt-150">
    <div class="col">
-      <h2 class=" mb-75 text-center">Shopping Bag</h2>
+      <h2 class=" mb-75 text-center roboto font-weight-bold large-text ">Shopping Bag</h2>
    </div>
 </div>
 <div class="row">
@@ -16,7 +16,7 @@
          <table class="table table-sm table-borderless">
             <thead class="">
                <tr>
-                  <th scope="col">Product Info</th>
+                  <th scope="col"></th>
                   <th scope="col">Name</th>
                   <th scope="col">Price</th>
                   <th scope="col">Qty</th>
@@ -114,7 +114,7 @@
                <span class="icon">
                <i class="fas fa-chevron-left"></i>
                </span>
-               <span class="text-uppercase ">Keep Sehopping</span>
+               <span class="text-uppercase ">Keep Shopping</span>
                </a>
             </div>
          </div>
@@ -131,7 +131,7 @@
          <div class="col-12">
             <table class=" w-100 mb-150 grey">
                <tr class="w-75 pl-2">
-                  <p class="table-header-text">Saved for later</p>
+                  <p class="table-header-text roboto font-weight-bold">Saved for later</p>
                </tr>
                {% for item in save_for_later_items %}
                <tr class="saved-table">
