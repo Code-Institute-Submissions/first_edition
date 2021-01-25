@@ -462,7 +462,7 @@ color:white;
 
 .product-height {
 
-    height:400px;
+    height:380px;
     width:233px;
      display: block;
   margin-left: auto;
@@ -776,5 +776,19 @@ color:white;
    .padding-sm-foter {
 
     padding: 0 30px;
+}
+}
+@media (max-width: 1550px) {
+   .product-height {
+
+    height:340px;
+    width:165px;
+}
+}
+
+@media (max-width: 1200px) {
+   .text-center-xl {
+
+    text-align: center;
 }
 }

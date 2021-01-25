@@ -129,4 +129,4 @@ class Rating(models.Model):
     dislikes = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return self.user.user
+        return self.user

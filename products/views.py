@@ -6,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
-# Loader Loads and returns a template
-from django.template import loader
 from checkout.forms import RateForm
 from checkout.models import Review, ReviewForm, OrderLineItem, Rating
 from profiles.models import UserProfile
@@ -90,6 +88,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     review = Review.objects.filter(product=product_id)
+    form = RateForm()
     is_buyer = False
     lines = OrderLineItem.objects.filter(product=product)
     rating = Rating.objects.filter(product=product_id)
@@ -103,6 +102,7 @@ def product_detail(request, product_id):
         "review": review,
         "is_buyer": is_buyer,
         "rating": rating,
+        "form": form,
         }
     return render(request, "products/product_detail.html", context)
 
@@ -169,7 +169,7 @@ def delete_comment(request, product_id):
 @login_required
 def rate(request, product_id):
     """ view that allows to rate a product, similiar to reveiw """
-
+    redirect_url = request.POST.get('redirect_url')
     product = Product.objects.get(id=product_id)
     if request.method == 'POST':
         form = RateForm(request.POST)
@@ -186,14 +186,7 @@ def rate(request, product_id):
         else:
             form = RateForm()
 
-    template = loader.get_template('products/product_detail.html')
-
-    context = {
-        'form': form,
-        'product': product,
-        }
-
-    return HttpResponse(template.render(context, request))
+    return redirect(redirect_url)
 
 
 @login_required
