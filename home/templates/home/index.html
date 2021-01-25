@@ -1,158 +1,123 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block page_header %}
-
 {% endblock %}
-
 {% block content %}
-
 <!-- Hero Image with some opening text to attract the user to the website. I put a lot of effort into this as good first impressions for the user are extremely valuable for my website. -->
- <div class="container-fluid pl-0">
-    
-    <div class="row">
-        <div class="col-12 pr-0 hero-img-container">
-            <img src="media/hero-img.jpg" alt="" class="frontpage-img">
-            <div class="black-fade">
-                <p class="hero-img-txt roboto ">Welcome to The <br>
-                First Edition</p>
-            
-            </div>
-            <a class="btn hero-button-1 mb-3 no-hover-change " href="{% url 'products' %}?category=bestsellers" role="button">Button test </a>
-            <a class="btn hero-button-2 mb-3 no-hover-change" href="{% url 'products' %}?category=bestsellers" role="button">View all </a>
-
-        </div>
-
-    </div>
+<div class="container-fluid pl-0">
+   <div class="row">
+      <div class="col-12 pr-0 hero-img-container">
+         <img src="media/hero-img.jpg" alt="" class="frontpage-img">
+         <div class="black-fade">
+            <p class="hero-img-txt roboto ">Welcome to The <br>
+               First Edition
+            </p>
+         </div>
+         <a class="btn hero-button-1 mb-3 no-hover-change " href="{% url 'products' %}?category=bestsellers" role="button">Button test </a>
+         <a class="btn hero-button-2 mb-3 no-hover-change" href="{% url 'products' %}?category=bestsellers" role="button">View all </a>
+      </div>
    </div>
-   <!-- I have divided the rest of the index page up of little book containers depending on the category. Besides bestsellers, only the highly rated products in their respective category will appear -->
-   <div class="container-fluid  pt-250">
-        <div class="row">
-            <div class="col-6 offset-md-3">
-                <div class="row">
-                <div class="col-9">
-                    <p class="roboto index-book-selection-font">10 Best Sellers in The First Edition</p>
-                </div>
-                <div class="col-3">
-                    <a class="btn button-style mb-3 hvr-float-shadow" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
-                </div>
-            
-        </div>
-        </div>
-    </div>
-
-    <div class="row book-row pb-250">
-        <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 grey">
-                    {% for product in product_bestsellers %}
-                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
-                        </a>
-                    {% endfor %}
+</div>
+<!-- I have divided the rest of the index page up of little book containers depending on the category. Besides bestsellers, only the highly rated products in their respective category will appear -->
+<div class="container-fluid  pt-250">
+   <div class="row">
+      <div class="col-6 offset-md-3">
+         <div class="row">
+            <div class="col-9">
+               <p class="roboto index-book-selection-font">10 Best Sellers in The First Edition</p>
             </div>
-        </div>
-                </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 offset-md-3">
-                <div class="row ">
-                <div class="col-9">
-                    <p class="roboto index-book-selection-font">Highly Rated Fiction Books</p>
-                </div>
-                <div class="col-3">
-                    <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
-                </div>
-            
-        </div>
-        </div>
-    </div>
-
-    <div class="row book-row pb-250">
-        <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 grey">
-                    {% for product in product_fiction %}
-                      
-                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
-                        </a>
-                    
-                    {% endfor %}
+            <div class="col-3">
+               <a class="btn button-style mb-3 hvr-float-shadow" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
             </div>
-        </div>
-                </div>
-                
-                
-
-
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 offset-md-3">
-                <div class="row">
-                <div class="col-9">
-                    <p class="roboto index-book-selection-font">Highly Rated History Books</p>
-                </div>
-                <div class="col-3">
-                    <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
-                </div>
-            
-        </div>
-        </div>
-    </div>
-
-    <div class="row book-row pb-250">
-        <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 grey">
-                    {% for product in product_history %}
-                       
-                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
-                        </a>
-                       
-                    {% endfor %}
+         </div>
+      </div>
+   </div>
+   <div class="row book-row pb-250">
+      <div class="col-6 offset-md-3">
+         <div class="scroll-img-container padding-10 grey">
+            {% for product in product_bestsellers %}
+            <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
+            </a>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-6 offset-md-3">
+         <div class="row ">
+            <div class="col-9">
+               <p class="roboto index-book-selection-font">Highly Rated Fiction Books</p>
             </div>
-        </div>
-                </div>
-                
-                
-
-
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 offset-md-3">
-                <div class="row">
-                <div class="col-9">
-                    <p class="roboto index-book-selection-font">Highly Rated Philosophy Books</p>
-                </div>
-                <div class="col-3">
-                    <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
-                </div>
-            
-        </div>
-        </div>
-    </div>
-
-    <div class="row book-row pb-250">
-        <div class="col-6 offset-md-3">
-                <div class="scroll-img-container padding-10 grey">
-                    {% for product in product_philosophy %}
-                    
-                        <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
-                        </a>
-                  
-                    {% endfor %}
+            <div class="col-3">
+               <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=fiction" role="button">View all ({{ product_fiction|length }} books available)</a>
             </div>
-        </div>
-                </div>
-                
-                
-
-
-    </div>
+         </div>
+      </div>
+   </div>
+   <div class="row book-row pb-250">
+      <div class="col-6 offset-md-3">
+         <div class="scroll-img-container padding-10 grey">
+            {% for product in product_fiction %}
+            <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
+            </a>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-6 offset-md-3">
+         <div class="row">
+            <div class="col-9">
+               <p class="roboto index-book-selection-font">Highly Rated History Books</p>
+            </div>
+            <div class="col-3">
+               <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=history" role="button">View all ({{ product_history|length }} books available)</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row book-row pb-250">
+      <div class="col-6 offset-md-3">
+         <div class="scroll-img-container padding-10 grey">
+            {% for product in product_history %}
+            <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
+            </a>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-6 offset-md-3">
+         <div class="row">
+            <div class="col-9">
+               <p class="roboto index-book-selection-font">Highly Rated Philosophy Books</p>
+            </div>
+            <div class="col-3">
+               <a class="btn mb-3 hvr-float-shadow button-style" href="{% url 'products' %}?category=philosophy" role="button">View all ({{ product_philosophy|length }} books available)</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row book-row pb-250">
+      <div class="col-6 offset-md-3">
+         <div class="scroll-img-container padding-10 grey">
+            {% for product in product_philosophy %}
+            <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
+            </a>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
 {% endblock %}
+

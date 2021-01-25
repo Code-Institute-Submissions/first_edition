@@ -1,228 +1,207 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
-
 {% block page_header %}
-    
 {% endblock %}
-
 {% block content %}
-        <div class="row pt-150">
-            <div class="col">
-              
-                <h2 class=" mb-75 text-center">Shopping Bag</h2>
-                
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6 offset-md-3 {% if not save_for_later_items %} mb-150 {% endif %} ">
-                {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        <table class="table table-sm table-borderless">
-                            <thead class="">
-                                <tr>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for item in bag_items %}
-                                <tr>
-                                    <td class="p-3 w-25">
-                                        {% if item.product.image    %}
-                            <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                            {% else %}
-                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
-                            {% endif %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0 small text-muted">ISBN: {{ item.product.isbn|upper }}</p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
-                                    </td>
-                                    <td class="py-3 w-25">
-                                        <form class="form update-quantity-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="5"
-                                                        data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-quantity cursor ">Update</a>
-                                        <a class="remove-item-bag cursor" id="remove_bag{{ item.item_id }}">Remove</a>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_total:item.quantity }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
-                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
-                                        </p>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn button-style no-hover-change btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn button-style no-hover-change btn-lg">
-                                        <span class="text-uppercase">Checkout Now</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                {% else %}
-
-                    <div class="container-fluid mb-300 mt-150">
-                    <div class="row">
-                        <div class="col-4 offset-md-2">
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products' %}" class="btn button-style no-hover-change btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase ">Keep Sehopping</span>
-                    </a>
-                    </div>
-                    </div>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-
-    
-     <!-- I have created the option for the user to save items without necessarily having them inside the bag. They can move the product from here to the bag or just remove it altogether. It works by cookies, so you dont necessarily need an account to
-     access this function -->
-                {% if save_for_later_items %}
-                <div class="row mt-150">
-                    <div class="col-8 offset-2">
-                <div class="row">
-                    <div class="col-12">
-                        <table class=" w-100 mb-150 grey">
-                                    <tr class="w-75 pl-2">
-                                        <p class="table-header-text">Saved for later</p>
-                                        
-                                    </tr>
-                                    {% for item in save_for_later_items %}
-                                    <tr class="saved-table">
-                                        <td class="pl-3 pb-4 w-15 pt-4">
-                                        {% if item.product.image    %}
-                            <img class="" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                            {% else %}
-                            <img class="" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
-                            {% endif %}
-                                    </td>
-                                        <td class="saved-for-later-name w-70 pt-4">
-                                            {{ item.product.name }}
-                                            <form class="mt-0 pt-0 mb-0 pb-0" id="remove-from-saved" action="{% url 'remove_from_saved' item.item_id %}" method="POST">
-                                                {% csrf_token %}
-                                                    <input  type="hidden" name="no_toast" value="2">
-                                                        <a href="javascript:{}" class="saved-for-later-links" onclick="document.getElementById('remove-from-saved').submit(); return false;">Remove</a>
-                                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                
-                                            </form>
-                                            <form class="mt-0 pt-0 mb-0 pb-0" id="from-saved-to-bag" action="{% url 'add_to_bag' item.item_id %}" method="POST">
-                                                {% csrf_token %}
-                                                
-                                                    <input  type="hidden" name="quantity" value="1">
-                                                    <a href="javascript:{}" class="saved-for-later-links remove-saved-to-bag" id="remove_{{ item.item_id }}" onclick="document.getElementById('from-saved-to-bag').submit(); return false;">Move to Basket</a>
-                                                    
-                                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            </form>
-                                        </td>
-                                        <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
-                                            ${{ item.product.price }}
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </table>
+<div class="row pt-150">
+   <div class="col">
+      <h2 class=" mb-75 text-center">Shopping Bag</h2>
+   </div>
+</div>
+<div class="row">
+    <div class="col-6 offset-md-3 {% if not save_for_later_items %} mb-150 {% endif %} ">
+      {% if bag_items %}
+      <div class="table-responsive rounded">
+         <table class="table table-sm table-borderless">
+            <thead class="">
+               <tr>
+                  <th scope="col">Product Info</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Subtotal</th>
+               </tr>
+            </thead>
+            {% for item in bag_items %}
+            <tr>
+               <td class="p-3 w-25">
+                  {% if item.product.image    %}
+                  <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                  {% else %}
+                  <img class="w-100" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
+                  {% endif %}
+               </td>
+               <td class="py-3">
+                  <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                  <p class="my-0 small text-muted">ISBN: {{ item.product.isbn|upper }}</p>
+               </td>
+               <td class="py-3">
+                  <p class="my-0">${{ item.product.price }}</p>
+               </td>
+               <td class="py-3 w-25">
+                  <form class="form update-quantity-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                     {% csrf_token %}
+                     <div class="form-group">
+                        <div class="input-group">
+                           <div class="input-group-prepend">
+                              <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                                 data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                              <span>
+                              <i class="fas fa-minus fa-sm"></i>
+                              </span>
+                              </button>
+                           </div>
+                           <input class="form-control form-control-sm qty_input" type="number"
+                              name="quantity" value="{{ item.quantity }}" min="1" max="5"
+                              data-item_id="{{ item.item_id }}"
+                              id="id_qty_{{ item.item_id }}">
+                           <div class="input-group-append">
+                              <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                 data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                              <span>
+                              <i class="fas fa-plus fa-sm"></i>
+                              </span>
+                              </button>
+                           </div>
                         </div>
-
-                                        
-                    </div>
-                    </div>
-                    </div>
-                
-                    {% endif %}
-    
+                     </div>
+                  </form>
+                  <a class="update-quantity cursor ">Update</a>
+                  <a class="remove-item-bag cursor" id="remove_bag{{ item.item_id }}">Remove</a>
+               </td>
+               <td class="py-3">
+                  <p class="my-0">${{ item.product.price | calc_total:item.quantity }}</p>
+               </td>
+            </tr>
+            {% endfor %}
+            <tr>
+               <td colspan="5" class="pt-5 text-right">
+                  <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                  <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                  <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                  {% if free_delivery_delta > 0 %}
+                  <p class="mb-1 text-danger">
+                     You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                  </p>
+                  {% endif %}
+               </td>
+            </tr>
+            <tr>
+               <td colspan="5" class="text-right">
+                  <a href="{% url 'products' %}" class="btn button-style no-hover-change btn-lg">
+                  <span class="icon">
+                  <i class="fas fa-chevron-left"></i>
+                  </span>
+                  <span class="text-uppercase">Keep Shopping</span>
+                  </a>
+                  <a href="{% url 'checkout' %}" class="btn button-style no-hover-change btn-lg">
+                  <span class="text-uppercase">Checkout Now</span>
+                  <span class="icon">
+                  <i class="fas fa-lock"></i>
+                  </span>
+                  </a>
+               </td>
+            </tr>
+         </table>
+      </div>
+      {% else %}
+      <div class="container-fluid mb-300 mt-150">
+         <div class="row">
+            <div class="col-4 offset-md-2">
+               <p class="lead mb-5">Your bag is empty.</p>
+               <a href="{% url 'products' %}" class="btn button-style no-hover-change btn-lg">
+               <span class="icon">
+               <i class="fas fa-chevron-left"></i>
+               </span>
+               <span class="text-uppercase ">Keep Sehopping</span>
+               </a>
+            </div>
+         </div>
+      </div>
+      {% endif %}
+   </div>
+</div>
+<!-- I have created the option for the user to save items without necessarily having them inside the bag. They can move the product from here to the bag or just remove it altogether. It works by cookies, so you dont necessarily need an account to
+   access this function -->
+{% if save_for_later_items %}
+<div class="row mt-150">
+   <div class="col-8 offset-2">
+      <div class="row">
+         <div class="col-12">
+            <table class=" w-100 mb-150 grey">
+               <tr class="w-75 pl-2">
+                  <p class="table-header-text">Saved for later</p>
+               </tr>
+               {% for item in save_for_later_items %}
+               <tr class="saved-table">
+                  <td class="pl-3 pb-4 w-15 pt-4">
+                     {% if item.product.image    %}
+                     <img class="" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                     {% else %}
+                     <img class="" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
+                     {% endif %}
+                  </td>
+                  <td class="saved-for-later-name w-70 pt-4">
+                     {{ item.product.name }}
+                     <form class="mt-0 pt-0 mb-0 pb-0" id="remove-from-saved" action="{% url 'remove_from_saved' item.item_id %}" method="POST">
+                        {% csrf_token %}
+                        <input  type="hidden" name="no_toast" value="2">
+                        <a href="javascript:{}" class="saved-for-later-links" onclick="document.getElementById('remove-from-saved').submit(); return false;">Remove</a>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                     </form>
+                     <form class="mt-0 pt-0 mb-0 pb-0" id="from-saved-to-bag" action="{% url 'add_to_bag' item.item_id %}" method="POST">
+                        {% csrf_token %}
+                        <input  type="hidden" name="quantity" value="1">
+                        <a href="javascript:{}" class="saved-for-later-links remove-saved-to-bag" id="remove_{{ item.item_id }}" onclick="document.getElementById('from-saved-to-bag').submit(); return false;">Move to Basket</a>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                     </form>
+                  </td>
+                  <td class="saved-for-later-price w-15 text-right pr-2 pt-4">
+                     ${{ item.product.price }}
+                  </td>
+               </tr>
+               {% endfor %}
+            </table>
+         </div>
+      </div>
+   </div>
+</div>
+{% endif %}
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-
 <script type="text/javascript">
-    
-    $('.update-quantity').click(function(e) {
-        var form = $(this).prev('.update-quantity-form');
-        form.submit();
-    })
-
+   $('.update-quantity').click(function(e) {
+       var form = $(this).prev('.update-quantity-form');
+       form.submit();
+   })
    
-    $('.remove-item-bag').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_bag')[1];
-        var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-        var no_toast = 1;
-
-        $.post(url, data, no_toast)
-         .done(function() {
-             location.reload();
-         });
-    })
-
-    $('.remove-saved-to-bag').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove_from_saved_no_toast/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-        })
+   
+   $('.remove-item-bag').click(function(e) {
+       var csrfToken = "{{ csrf_token }}";
+       var itemId = $(this).attr('id').split('remove_bag')[1];
+       var url = `/bag/remove/${itemId}`;
+       var data = {'csrfmiddlewaretoken': csrfToken};
+       var no_toast = 1;
+   
+       $.post(url, data, no_toast)
+        .done(function() {
+            location.reload();
+        });
+   })
+   
+   $('.remove-saved-to-bag').click(function(e) {
+       var csrfToken = "{{ csrf_token }}";
+       var itemId = $(this).attr('id').split('remove_')[1];
+       var url = `/bag/remove_from_saved_no_toast/${itemId}`;
+       var data = {'csrfmiddlewaretoken': csrfToken};
+   
+       $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+       })
 </script>
 {% endblock %}
