@@ -16,14 +16,14 @@
       <title>The First Edition{% block extra_title %}{% endblock %} </title>
    </head>
    <body>
-      <header class="container-fluid fixed-top charcaol nav-margin-lg">
-         <div class="row charcoal pt-10px ruda nav-margin-lg">
-            <div class="col-lg-4 col-md-12 text-lg-left py-1 ">
+      <header class="container-fluid fixed-top charcaol">
+         <div class="row charcoal pt-10px ruda">
+            <div class="col-lg-4 col-md-12 text-lg-left py-1">
                <a href="{% url 'home' %}" class="nav-link main-logo-link">
                   <h2 class="logo-font align-right text-center">The First Edition</h2>
                </a>
             </div>
-            <div class="col-lg-4 col-md-12 center-searchbar-md  py-2 ">
+            <div class="col-lg-4 col-md-12 center-searchbar-md  py-2">
                <div class="input-group center-searchbar-lg ">
                   <form onsubmit="event.preventDefault();" role="search" method="GET" action="{% url 'products' %}" class="search-form">
                      <input id="search" class="search-input" type="search" placeholder="Search all Products" autofocus required />
@@ -31,17 +31,11 @@
                   </form>
                </div>
             </div>
-            <div class="col-lg-4 col-md-12  center-text-lg ">
+            <div class="col-lg-4 col-md-12 my-auto py-1 py-lg-0 center-text-lg">
                <ul class="nav d-flex align-items-end view-width-small-text center-text-lg ">
-                  {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                  <li class="nav-item">
-                     <a class="nav-link nav-link-style" href="{% url 'add_product' %}">Add a Product</a>
-                  </li>
-                  {% endif %}
-                  {% endif %}
+                
                   <li class="list-inline-item dropdown">
-                     <a class="nav-link dropdown-toggle nav-link-style" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
+                     <a class="nav-link dropdown-toggle nav-link-style nav-links-paddings" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
                      <div class="dropdown-menu">
                         <a class="dropdown-item orange-click" href="{% url 'products' %}?category=fiction">Fiction</a>
                         <a class="dropdown-item orange-click" href="{% url 'products' %}?category=religion_&_beliefs">Religion & Beliefs</a>
@@ -51,11 +45,17 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item orange-click" href="{% url 'product_bestsellers' %}">Bestsellers</a>
                         <a class="dropdown-item orange-click" href="{% url 'products' %}">All Products</a>
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item orange-click" href="{% url 'add_product' %}">Add a Product</a>
+                        {% endif %}
+                        {% endif %}
                      </div>
                   </li>
                   {% if request.user.is_authenticated %}
                   <li class="list-inline-item dropdown">
-                     <a class="nav-link dropdown-toggle nav-link-style" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
+                     <a class="nav-link dropdown-toggle nav-link-style nav-links-paddings" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
                      <div class="dropdown-menu">
                         <a class="dropdown-item orange-click" href="{% url 'profile' %}">Profile</a>
                         <a class="dropdown-item orange-click" href="{% url 'user_order_history' %}">Order History</a>
@@ -64,15 +64,20 @@
                      </div>
                   </li>
                   {% else %}
-                  <li class="nav-item">
-                     <a class="nav-link nav-link-style" href="{% url 'account_login' %}">Login</a>
+                  <li class="list-inline-item dropdown">
+                     <a class="nav-link dropdown-toggle nav-link-style nav-links-paddings" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                     <div class="dropdown-menu">
+                         <a class="dropdown-item orange-click" href="{% url 'account_login' %}">Login</a>
+                        <a class="dropdown-item orange-click" href="{% url 'account_signup' %}">Register</a>
+                        </div>
+                   
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link nav-link-style" href="{% url 'account_signup' %}">Register</a>
-                  </li>
+                
+            
+    
                   {% endif %}
                   <li class="nav-item">
-                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
+                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link nav-links-paddings" href="{% url 'view_bag' %}">
                         <div class="text-center">
                            <p class="my-0 nav-link-style">
                               <i class="fas fa-shopping-bag fa-lg nav-link-style pr-1"></i>

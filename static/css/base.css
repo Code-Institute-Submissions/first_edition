@@ -310,6 +310,10 @@ body {
 text-decoration: none;
 color:white;
 }
+.nav-links-paddings {
+    padding-left:10px;
+    padding-right:10px;
+}
 
 .nav-link-style {
     color:white;
