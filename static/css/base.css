@@ -317,7 +317,12 @@ color:white;
 .nav-link-style:hover {
     color:#FF7F50;
 }
-
+.orange-click:active {
+    background-color:#FF7F50;
+}
+.orange-click:hover {
+    background-color:#FF7F50;
+}
 :root {
   --rad: .7rem;
   --dur: .3s;
@@ -401,7 +406,7 @@ color:white;
 
 .frontpage-img {
    width: 100%;
-  height:990px;
+
   background-size: 100% 100%;
   
 }
@@ -711,6 +716,14 @@ color:white;
         padding-top: 164px;
     }
 }
+
+@media (max-width: 991px) {
+   .nav-margin-lg {
+        margin-bottom:100px;
+      
+    }
+}
+
 
 @media (max-width: 992px) {
    .product-height {

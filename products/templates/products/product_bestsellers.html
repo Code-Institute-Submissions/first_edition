@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_header %}
+<div class="container header-container">
+   <div class="row">
+      <div class="nav-margin-lg"></div>
+   </div>
+</div>
 {% endblock %}
 {% block content %}
 <!-- Since Product_bestsellers is a boolean rather than a category, I created its own view and template to render it. Otherwise its functionally the same as the products template. -->

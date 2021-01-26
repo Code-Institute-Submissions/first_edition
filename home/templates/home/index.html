@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_header %}
+
+   <div class="row">
+      <div class="nav-margin-lg"></div>
+   </div>
+
 {% endblock %}
 {% block content %}
 <!-- Hero Image with some opening text to attract the user to the website. I put a lot of effort into this as good first impressions for the user are extremely valuable for my website. -->
 <div class="container-fluid pl-0">
    <div class="row">
       <div class="col-12 pr-0 hero-img-container">
-         <img src="media/hero-img.jpg" alt="" class="frontpage-img">
+         <img src="media/hero-img.jpg" alt="" class="frontpage-img img-fluid">
          <div class="black-fade">
             <p class="hero-img-txt roboto ">Welcome to The <br>
                First Edition
