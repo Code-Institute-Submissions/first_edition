@@ -830,3 +830,18 @@ color:white;
     margin-top:300px;
 }
 }
+
+
+@media (max-width:500px) {
+   .no-image-500 {
+
+    display:none;
+}
+}
+
+@media (max-width:394px) {
+   .mt-5-339 {
+
+    margin-top:5px;
+}
+}

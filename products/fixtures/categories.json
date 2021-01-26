@@ -33,7 +33,7 @@
         "pk":4,
         "model":"products.category",
         "fields": {
-            "name":"religion_&_beliefs",
+            "name":"religion",
             "friendly_name":"Religion & Beliefs"
         }
 

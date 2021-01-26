@@ -15,7 +15,7 @@
    </div>
 </div>
 <div class="row">
-    <div class="col-6 offset-md-3 {% if not save_for_later_items %} mb-150 {% endif %} ">
+    <div class="col-12  col-lg-6 offset-lg-3 {% if not save_for_later_items %} mb-150 {% endif %} ">
       {% if bag_items %}
       <div class="table-responsive rounded">
          <table class="table table-sm table-borderless">
@@ -32,7 +32,7 @@
             <tr>
                <td class="p-3 w-25">
                   {% if item.product.image    %}
-                  <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                  <img class="w-100 no-image-500" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                   {% else %}
                   <img class="w-100" src="{{ MEDIA_URL }}noimage.png"  alt="{{ item.product.name }}">
                   {% endif %}
@@ -94,14 +94,14 @@
             </tr>
             <tr>
                <td colspan="5" class="text-right">
-                  <a href="{% url 'products' %}" class="btn button-style no-hover-change btn-lg">
+                  <a href="{% url 'products' %}" class="btn button-style no-hover-change  btn-lg">
                   <span class="icon">
                   <i class="fas fa-chevron-left"></i>
                   </span>
-                  <span class="text-uppercase">Keep Shopping</span>
+                  <span class="">Keep Shopping</span>
                   </a>
-                  <a href="{% url 'checkout' %}" class="btn button-style no-hover-change btn-lg">
-                  <span class="text-uppercase">Checkout Now</span>
+                  <a href="{% url 'checkout' %}" class="btn button-style no-hover-change mt-5-339  btn-lg">
+                  <span class="">Checkout Now</span>
                   <span class="icon">
                   <i class="fas fa-lock"></i>
                   </span>
