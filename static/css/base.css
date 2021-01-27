@@ -845,3 +845,60 @@ color:white;
     margin-top:5px;
 }
 }
+
+
+
+
+@media (max-width:1250px) {
+   .hero-img-txt  {
+
+    font-size:2.25rem;
+}
+}
+
+@media (max-width:1050px) {
+   .hero-img-txt  {
+
+    font-size:2rem;
+}
+}
+
+
+@media (max-width:600px) {
+   .product-height-index  {
+
+    height:150px;
+}
+}
+
+@media (max-width:500px) {
+   .product-height-index  {
+
+    height:100px;
+}
+}
+
+@media (max-width:400px) {
+   .product-height-index  {
+    height:85px;
+}
+}
+
+
+ @media (max-width:500px) {
+   .index-book-selection-font  {
+    font-size:1.5rem;
+}
+}
+
+ @media (max-width:415px) {
+   .index-book-selection-font  {
+    font-size:1.25rem;
+}
+}
+
+ @media (max-width:355px) {
+   .index-book-selection-font  {
+    font-size:1.1rem;
+}
+}
