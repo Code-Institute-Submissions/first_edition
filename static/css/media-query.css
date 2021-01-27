@@ -1,0 +1,138 @@
+/* =====================
+        Media Querys
+   ===================== */
+
+ @media (min-width: 992px) {
+     .header-container {
+         padding-top: 164px;
+    }
+}
+ @media (max-width: 991px) {
+     .nav-margin-lg {
+         margin-bottom:100px;
+    }
+}
+ @media (max-width: 992px) {
+     .product-height {
+         height:350px;
+    }
+}
+ @media (max-width: 1171px) {
+     .view-width-small-text {
+         font-size:0.75rem;
+    }
+}
+ @media (max-width: 992px) {
+     .center-text-lg {
+         justify-content: center;
+         display: flex;
+    }
+}
+ @media (max-width: 992px) {
+     .center-searchbar-lg {
+         justify-content: center;
+         display: flex;
+    }
+}
+ @media (max-width:767px) {
+     .social-icons li.title {
+         display:block;
+         margin-right:0;
+         font-weight:600 
+    }
+}
+ @media (max-width:991px) {
+     .site-footer [class^=col-] {
+         margin-bottom:30px 
+    }
+}
+ @media (max-width: 768px) {
+     .center-text-md {
+         text-align: center;
+    }
+}
+ @media (max-width:767px) {
+     .site-footer {
+         padding-bottom:0 
+    }
+     .site-footer .copyright-text,.site-footer .social-icons {
+         text-align:center 
+    }
+}
+ @media (max-width: 768px) {
+     .padding-sm-foter {
+         padding: 0 30px;
+    }
+}
+ @media (max-width: 1550px) {
+     .product-height {
+         height:340px;
+         width:165px;
+    }
+}
+ @media (max-width: 1200px) {
+     .text-center-xl {
+         text-align: center;
+    }
+}
+ @media (max-width:576px) {
+     .resize-img-sm {
+         height:300px;
+         width:115px;
+    }
+}
+ @media (max-width:992px) {
+     .mt-300-lg {
+         margin-top:300px;
+    }
+}
+ @media (max-width:500px) {
+     .no-image-500 {
+         display:none;
+    }
+}
+ @media (max-width:394px) {
+     .mt-5-339 {
+         margin-top:5px;
+    }
+}
+ @media (max-width:1250px) {
+     .hero-img-txt {
+         font-size:2.25rem;
+    }
+}
+ @media (max-width:1050px) {
+     .hero-img-txt {
+         font-size:2rem;
+    }
+}
+ @media (max-width:600px) {
+     .product-height-index {
+         height:150px;
+    }
+}
+ @media (max-width:500px) {
+     .product-height-index {
+         height:100px;
+    }
+}
+ @media (max-width:400px) {
+     .product-height-index {
+         height:85px;
+    }
+}
+ @media (max-width:500px) {
+     .index-book-selection-font {
+         font-size:1.5rem;
+    }
+}
+ @media (max-width:415px) {
+     .index-book-selection-font {
+         font-size:1.25rem;
+    }
+}
+ @media (max-width:355px) {
+     .index-book-selection-font {
+         font-size:1.1rem;
+    }
+}

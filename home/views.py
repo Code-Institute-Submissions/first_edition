@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from products.models import Product, Category
+from django.shortcuts import render
+from products.models import Product
 
 
 def index(request):
