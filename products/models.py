@@ -1,5 +1,4 @@
 from django.db import models
-from profiles.models import UserProfile
 
 
 class Category(models.Model):
@@ -17,8 +16,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey("Category", null=True, blank=True,
-     on_delete=models.SET_NULL)
+    category = models.ForeignKey("Category", null=True, blank=True, on_delete=models.SET_NULL)
     is_bestseller = models.BooleanField(default=False)
     isbn = models.CharField(
         max_length=254, null=True, blank=True)
