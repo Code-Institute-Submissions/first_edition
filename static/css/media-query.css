@@ -136,3 +136,27 @@
          font-size:1.1rem;
     }
 }
+
+
+ @media (max-width:750px) {
+     .product-height {
+         height:280px;
+         width:150px;
+    }
+}
+
+@media (max-width:420px) {
+     .resize-img-sm {
+         height:250px;
+         width:80px;
+    }
+
+}
+
+@media (max-width:380px) {
+     .resize-img-sm {
+         height:175px;
+         width:66px;
+    }
+
+}

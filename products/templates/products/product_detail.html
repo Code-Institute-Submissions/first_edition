@@ -10,18 +10,19 @@
 {% block content %}
 <div class="container-fluid mb-150 mt-300-lg">
    <div class="row">
-      <div class="col-4 col-md-3 offset-md-1 col-lg-3 col-xl-2 offset-xl-3 offset-lg-2 grey pt-5">
+      <div class="col-4 col-md-3 offset-md-1 col-lg-3 col-xl-2 offset-xl-3 offset-lg-2 grey pt-5 d-none d-sm-block ">
          {% if product.image %}
-         <a href="{{ product.image.url }}" target="_blank" class=" ceneter-image-sm ">
+         <a href="{{ product.image.url }}" target="_blank" class=" ceneter-image-s ">
          <img class=" img-fluid image-product-detail resize-img-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
          </a>
          {% else %}
          <img class=" img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
          {% endif %}
       </div>
-      <div class="col-8 col-md-7 col-lg-5 col-xl-4 grey pt-5">
+      <div class="col-12 col-sm-7 col-lg-5 col-xl-4 grey pt-5">
          <div class="">
             <h4 class="product-detail-name roboto large-text font-weight-bold pr-3">{{ product.name }}</h4>
+            
             <p class="">by {{ product.author }}</p>
             <p class="text-muted">
                <i class="fas fa-tag pr-1"></i>{{ product.category.friendly_name }}
@@ -34,7 +35,9 @@
                   {% csrf_token %}
                   <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                   <input type="submit" class="btn button-style rounded-0" value="Add to Bag">
+                
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                  
                </form>
             </div>
             <div class="col-12 col-md-3 col-lg-2 pt-3">
@@ -44,7 +47,15 @@
                   <input type="hidden" name="redirect_url" value="{{ request.path }}">
                </form>
             </div>
+            
          </div>
+         <div class="row mt-1 pl-0">
+            <div class="col-12 align-left">
+                <a href="{% url 'products' %}" class="btn rounded-0 align-left">
+                    <span class="text-uppercase button-style"><i class="fas fa-chevron-left pr-1"></i>Keep Shopping</span>
+                        </a>
+            </div>
+        </div>
          <div class="row pt-3">
             <div class="col-12 grey">
                <form method="POST" action="{% url 'rate' product.id %}" class="">
