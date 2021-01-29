@@ -164,6 +164,19 @@ colours etc.
 
 # Deployment
 
+I deployed my website to Heroku under the guidance of Code institutes tutorial on how to do so. I will explain this process thoroughly in these steps:
+
+1. First, you must create a new app on [Heroku.com](https://www.heroku.com/). Login/signup for an account and then navigate to the dashboard. From here, Click on her app and give it a name 
+(should ideally call it the same name as your website) and pick a region closest to you. Afterwards, click on the resources tab and then under addons type in postgres and click on the result.
+You can use the free plan for the purposes of this demostration.
+
+2. In order to use Postgres, you must install dj_database_url and psycopg2. Type into the console "pip3 install psycopg2-binary" and "pip3 install dj_database_url". Make a requirements.txt file by
+typing "pip3 freeze > requirements.txt".
+
+3. In the settings.py file, import dj_database_url. Now, scroll down and find the database setting (which should be marked by a comment) and comment out the orignal code. Instead, Type the following:
+
+
+
 
 
 # Credits
