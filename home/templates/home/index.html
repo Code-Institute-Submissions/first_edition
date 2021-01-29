@@ -16,13 +16,13 @@
    <div class="row">
       <div class="col-12 pr-0 hero-img-container ">
          <img src="media/hero-img.jpg" alt="" class="frontpage-img img-fluid">
-         <div class="black-fade">
-            <p class="hero-img-txt roboto">Welcome to The <br>
-               First Edition
+         <div class="row">
+             <div class="col-6 offset-3 col-md-4 offset-md-4 black-fade">
+            <p class="hero-img-txt roboto fadetest">Welcome to The <br>First Edition
             </p>
+            </div>
          </div>
-         <a class="btn hero-button-1 mb-3 no-hover-change " href="{% url 'products' %}?category=bestsellers" role="button">Button test </a>
-         <a class="btn hero-button-2 mb-3 no-hover-change" href="{% url 'products' %}?category=bestsellers" role="button">View all </a>
+         <a class="btn hero-button btn-size-hero mb-3 no-hover-change" href="{% url 'products' %}" role="button">View all Books </a>
       </div>
    </div>
 </div>
