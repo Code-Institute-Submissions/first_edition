@@ -6,8 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
-from checkout.forms import RateForm
-from checkout.models import Review, ReviewForm, OrderLineItem, Rating
+from checkout.models import Review, ReviewForm, OrderLineItem
 from profiles.models import UserProfile
 
 
@@ -88,10 +87,8 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     review = Review.objects.filter(product=product_id)
-    form = RateForm()
     is_buyer = False
     lines = OrderLineItem.objects.filter(product=product)
-    rating = Rating.objects.filter(product=product_id)
     for line in lines:
         order = line.order
         if order.user_profile == request.user.userprofile:
@@ -101,8 +98,6 @@ def product_detail(request, product_id):
         "product": product,
         "review": review,
         "is_buyer": is_buyer,
-        "rating": rating,
-        "form": form,
         }
     return render(request, "products/product_detail.html", context)
 

@@ -30,6 +30,8 @@ class Product(models.Model):
         blank=True, null=True)
     book_format = models.CharField(max_length=554)
     price = models.DecimalField(max_digits=5, decimal_places=2)
+    rating = models.DecimalField(
+        max_digits=3, decimal_places=2, null=True, blank=True)
     publisher = models.CharField(
         max_length=254, null=True, blank=True)
     image_url = models.URLField(

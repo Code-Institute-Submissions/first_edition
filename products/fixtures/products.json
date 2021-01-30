@@ -1,26 +1,7 @@
 [
+    
     {
         "pk":1,
-        "model":"products.product",
-        "fields":{
-            "isbn":"747584664",
-            "name":"Harry Potter and the Half-Blood Prince",
-            "author":"J.K. Rowling",
-            "num_pages":652,
-            "description": "When Dumbledore arrives at Privet Drive one summer night to collect Harry Potter,his wand hand is blackened and shrivelled, but he does not reveal why.Secrets and suspicion are spreading through the wizarding world,and Hogwarts itself is not safe. Harry is convincedthat Malfoy bears the Dark Mark: there is a Death Eater amongst them. Harry will need powerful magic and true friends as he explores Voldemort's darkest secrets, and Dumbledore prepares him to face his destiny",
-            "book_format":"Hardback",
-            "is_bestseller":"True",
-            "professional_endorsement":"The Harry Potter stories will join that small group of children's books which are read and reread into adulthood ― TLS",
-            "price":18.05,
-            "category":5,
-            "publisher":"Scholastic Inc.",
-            "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855706.jpg",
-            "image":"Harry-Potter-and-the-Half-Blood-Prince.jpg"
-        }
-    },
-
-    {
-        "pk":2,
         "model":"products.product",
         "fields":{
             "isbn":"439358078",
@@ -33,6 +14,7 @@
             "professional_endorsement":"I've yet to meet a ten-year-old who hasn't been entranced by its witty, complex plot and the character of the eponymous Harry Independent  Spellbinding, enchanting, bewitching stuff Mirror Teachers say a chapter can silence the most rowdy of classes Guardian One of the greatest literary adventures of modern times Sunday Telegraph The Harry Potter stories will join that small group of children's books which are read and reread into adulthood --  TLS ",
             "price":19.06,
             "category":5,
+            "rating":4.52,
             "publisher":"Scholastic Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855690.jpg",
             "image":"Harry-Potter-and-the-Order-of-the-Phoenix.jpg"
@@ -40,7 +22,7 @@
     },
 
     {
-        "pk":3,
+        "pk":2,
         "model":"products.product",
         "fields":{
             "isbn":"786222727",
@@ -53,6 +35,7 @@
             "professional_endorsement":"I've yet to meet a ten-year-old who hasn't been entranced by its witty, complex plot and the character of the eponymous Harry ― Independent",
             "price":14.44,
             "category":5,
+            "rating":4.55,
             "publisher":"Scholastic Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408845646.jpg",
             "image":"Harry-Potter-and-the-Philosophers-Stone.jpg"
@@ -60,7 +43,7 @@
     },
 
     {
-        "pk":4,
+        "pk":3,
         "model":"products.product",
         "fields":{
             "isbn":"043965548X",
@@ -73,6 +56,7 @@
             "professional_endorsement":"",
             "price":14.91,
             "category":5,
+            "rating":4.55,
             "publisher":"Scholastic Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855676.jpg",
             "image":"Harry-Potter-and-the-Prisoner-of-Azkaban.jpg"
@@ -80,7 +64,7 @@
     },
 
     {
-        "pk":5,
+        "pk":4,
         "model":"products.product",
         "fields":{
             "isbn":"439064864",
@@ -93,6 +77,7 @@
             "professional_endorsement":"",
             "price":31.27,
             "category":5,
+            "rating":4.57,
             "publisher":"Scholastic Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408845653.jpg",
             "image":"Harry-Potter-and-the-Chamber-of-Secrets.jpg"
@@ -100,7 +85,7 @@
     },
 
     {
-        "pk":6,
+        "pk":5,
         "model":"products.product",
         "fields":{
             "isbn":"074754624X",
@@ -113,6 +98,7 @@
             "professional_endorsement":"",
             "price":10.75,
             "category":5,
+            "rating":4.51,
             "publisher":"Scholastic Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855683.jpg",
             "image":"Harry-Potter-and-the-Goblet-of-Fire.jpg"
@@ -120,7 +106,7 @@
     },
 
     {
-        "pk":7,
+        "pk":6,
         "model":"products.product",
         "fields":{
             "isbn":"140449337",
@@ -133,6 +119,7 @@
             "professional_endorsement":"Here, for our age, is [Marcus' s] great work presented in its entirety, strongly introduced and freshly, elegantly translated. --Robert Fagles",
             "price":6.50,
             "category":3,
+            "rating":4.21,
             "publisher":"Penguin Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/5455/9781545565674.jpg",
             "image":"meditations.jpg"
@@ -140,7 +127,7 @@
     },
 
     {
-        "pk":8,
+        "pk":7,
         "model":"products.product",
         "fields":{
             "isbn":"1564780619",
@@ -153,6 +140,7 @@
             "professional_endorsement":"",
             "price":11.00,
             "category":3,
+            "rating":3.80,
             "publisher":"Penguin Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1404/9780140442106.jpg",
             "image":"letters-from-a-stoic.jpg"
@@ -160,7 +148,7 @@
     },
 
     {
-        "pk":9,
+        "pk":8,
         "model":"products.product",
         "fields":{
             "isbn":"374530718",
@@ -173,6 +161,7 @@
             "professional_endorsement":"",
             "price":5.50,
             "category":3,
+            "rating":3.92,
             "publisher":"Farrar  Straus and Giroux",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4746/9781474602280.jpg",
             "image":"sophies-world.jpg"
@@ -180,7 +169,7 @@
     },
 
     {
-        "pk":10,
+        "pk":9,
         "model":"products.product",
         "fields":{
             "isbn":"872207366",
@@ -193,6 +182,7 @@
             "professional_endorsement":"certainly the best translation of the Republic available, Julia Annas",
             "price":2.81,
             "category":3,
+            "rating":3.94,
             "publisher":"Hackett Publishing Company  Inc.",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199535767.jpg",
             "image":"republic.jpg"
@@ -200,7 +190,7 @@
     },
 
     {
-        "pk":11,
+        "pk":10,
         "model":"products.product",
         "fields":{
             "isbn":"014044923X",
@@ -213,6 +203,7 @@
             "professional_endorsement":"",
             "price":7.05,
             "category":3,
+            "rating":4.10,
             "publisher":"Penguin Classics",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199537075.jpg",
             "image":"Beyond-Good-and-Evil.jpg"
@@ -220,7 +211,7 @@
     },
 
     {
-        "pk":12,
+        "pk":11,
         "model":"products.product",
         "fields":{
             "isbn":"1400033721",
@@ -233,6 +224,7 @@
             "professional_endorsement":"",
             "price":11.44,
             "category":1,
+            "rating":4.18,
             "publisher":"Anchor",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141014630.jpg",
             "image":"Parallel-Worlds.jpg"
@@ -240,7 +232,7 @@
     },
 
     {
-        "pk":13,
+        "pk":12,
         "model":"products.product",
         "fields":{
             "isbn":"393061310",
@@ -253,6 +245,7 @@
             "professional_endorsement":"Diamond is broadly erudite, writes in a style that pleasantly expresses scientific concepts in vernacular American English, and deals almost exclusively in questions that should interest everyone concerned about how humanity has developed. . . . [He] has done us all a great favor by supplying a rock-solid alternative to the racist answer. . . . A wonderfully interesting book.--Alfred W. Crosby",
             "price":13.17,
             "category":1,
+            "rating":4.03,
             "publisher":"W.W. Norton",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0993/9780099302780.jpg",
             "image":"Guns-Germs-and-Steel-The-Fates-of-Human-Societies.jpg"
@@ -260,7 +253,7 @@
     },
 
     {
-        "pk":14,
+        "pk":13,
         "model":"products.product",
         "fields":{
             "isbn":"140449086",
@@ -273,6 +266,7 @@
             "professional_endorsement":"De Sélincourt's pacy, natural-sounding, rendering, as superbly revised and annotated by John Marincola...was a game-changer...still reads freshly and is a bestseller six decades after its first publication. --Edith Hall, Times Literary Supplement",
             "price":12.75,
             "category":1,
+            "rating":3.99,
             "publisher":"Penguin Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1404/9780140449082.jpg",
             "image":"The-Histories.jpg"
@@ -280,7 +274,7 @@
     },
 
     {
-        "pk":15,
+        "pk":14,
         "model":"products.product",
         "fields":{
             "isbn":"076790818X",
@@ -293,6 +287,7 @@
             "professional_endorsement":"A fascinating idea, and I can't think of many writers, other than Bryson, who would do it this well. It's the sort of book I would have devoured as a teenager. It might well turn unsuspecting young readers into scientists. And the famous, slightly cynical humour is always there ― Evening Standard",
             "price":10.92,
             "category":1,
+            "rating":4.21,
             "publisher":"Broadway Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/5521/9780552151740.jpg",
             "image":"A-Short-History-of-Nearly-Everything.jpg"
@@ -300,7 +295,7 @@
     },
 
     {
-        "pk":16,
+        "pk":15,
         "model":"products.product",
         "fields":{
             "isbn":"486404889",
@@ -313,6 +308,7 @@
             "professional_endorsement":"",
             "price":19.85,
             "category":1,
+            "rating":3.72,
             "publisher":"Dover Publications",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4864/9780486404882.jpg",
             "image":"A-General-History-of-the-Pyrates.jpg"
@@ -320,7 +316,7 @@
     },
 
     {
-        "pk":17,
+        "pk":16,
         "model":"products.product",
         "fields":{
             "isbn":"62508113",
@@ -333,6 +329,7 @@
             "professional_endorsement":"",
             "price":12.25,
             "category":4,
+            "rating":4.07,
             "publisher":"One World (UK)",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0616/9780061660184.jpg",
             "image":"The-World's-Religions.jpg"
@@ -340,7 +337,7 @@
     },
 
     {
-        "pk":18,
+        "pk":17,
         "model":"products.product",
         "fields":{
             "isbn":"0684869136",
@@ -353,6 +350,7 @@
             "professional_endorsement":"Jonathan Kirsch Los Angeles Times A brutally honest assessment of what archaeology can and cannot tell us about the historical accuracy of the Bible...presented with both authority and panache.",
             "price":11.78,
             "category":4,
+            "rating":3.42,
             "publisher":" Free Press; New Ed edition",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/6848/9780684869131.jpg",
             "image":"The-Bible-Unearthed.jpg"
@@ -360,7 +358,7 @@
     },
 
     {
-        "pk":19,
+        "pk":18,
         "model":"products.product",
         "fields":{
             "isbn":"451516753",
@@ -373,6 +371,7 @@
             "professional_endorsement":"",
             "price":7.88,
             "category":2,
+            "rating":4.18,
             "publisher":"Signet Classics",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141036144.jpg",
             "image":"1984.jpg"
@@ -380,7 +379,7 @@
     },
 
     {
-        "pk":20,
+        "pk":19,
         "model":"products.product",
         "fields":{
             "isbn":"849759682X",
@@ -393,6 +392,7 @@
             "professional_endorsement":"Unique among SF novels . . . I know nothing comparable to it except The Lord of the Rings. ― Arthur C. Clark",
             "price":13.60,
             "category":2,
+            "rating":4.22,
             "publisher":"Debolsillo",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/5750/9780575081505.jpg",
             "image":"Dune.jpg"
@@ -400,7 +400,7 @@
     },
 
     {
-        "pk":21,
+        "pk":20,
         "model":"products.product",
         "fields":{
             "isbn":"140620621",
@@ -413,6 +413,7 @@
             "professional_endorsement":"",
             "price":8.75,
             "category":2,
+            "rating":3.50,
             "publisher":"Penguin Books/Penguin Popular Classics",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1995/9780199535729.jpg",
             "image":"Moby-Dick.jpg"
@@ -420,7 +421,7 @@
     },
 
     {
-        "pk":22,
+        "pk":21,
         "model":"products.product",
         "fields":{
             "isbn":"143039954",
@@ -433,6 +434,7 @@
             "professional_endorsement":"[Fitzgerald's Odyssey and Iliad] open up once more the unique greatness of Homer's art at the level above the formula; yet at the same time they do not neglect the brilliant texture of Homeric verse at the level of the line and the phrase. -The Yale Review",
             "price":15.32,
             "category":2,
+            "rating":3.76,
             "publisher":"Penguin Classics",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/3933/9780393356250.jpg",
             "image":"The-Odyssey.jpg"
@@ -440,7 +442,7 @@
     },
 
     {
-        "pk":23,
+        "pk":22,
         "model":"products.product",
         "fields":{
             "isbn":"471377589",
@@ -453,6 +455,7 @@
             "professional_endorsement":"",
             "price":18.73,
             "category":1,
+            "rating":3.86,
             "publisher":"John Wiley & Sons",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1413/9780141394657.jpg",
             "image":"The-Iliad.jpg"
@@ -460,7 +463,7 @@
     },
 
     {
-        "pk":24,
+        "pk":23,
         "model":"products.product",
         "fields":{
             "isbn":"60935464",
@@ -473,6 +476,7 @@
             "professional_endorsement":"Someone rare has written this very fine novel, a writer with the liveliest sense of life and the warmest, most authentic humour. A touching book; and so funny, so likeable. ― Truman Capote",
             "price":6.26,
             "category":2,
+            "rating":4.27,
             "publisher":"Harper Perennial Modern Classics",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/0995/9780099549482.jpg",
             "image":"To-Kill-a-Mockingbird.jpg"
@@ -480,7 +484,7 @@
     },
 
     {
-        "pk":25,
+        "pk":24,
         "model":"products.product",
         "fields":{
             "isbn":"3895086908",
@@ -493,6 +497,7 @@
             "professional_endorsement":"There remains the greatest of all novelists--for what else can we call the author of War and Peace? --Virginia Woolf",
             "price":13.43,
             "category":2,
+            "rating":4.11,
             "publisher":"Konemann",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1992/9780199232765.jpg",
             "image":"War-and-Peace.jpg"
@@ -500,7 +505,7 @@
     },
 
     {
-        "pk":26,
+        "pk":25,
         "model":"products.product",
         "fields":{
             "isbn":"1411400429",
@@ -513,6 +518,7 @@
             "professional_endorsement":"The play's the thing here - no tricks or special effects, just lots of lovely Shakespeare, acted with punch and panache … an impressive treat - and, at not much more than a tenner for a full text on four CDs, an affordable one. --The Irish Times",
             "price":4.02,
             "category":1,
+            "rating":4.07,
             "publisher":"SparkNotes",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/4862/9780486272788.jpg",
             "image":"Hamlet.jpg"
@@ -520,7 +526,7 @@
     },
 
     {
-        "pk":27,
+        "pk":26,
         "model":"products.product",
         "fields":{
             "isbn":"517223627",
@@ -533,6 +539,7 @@
             "professional_endorsement":"",
             "price":21.87,
             "category":2,
+            "rating":4.03,
             "publisher":"Gramercy Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1475/9780147515872.jpg",
             "image":"Alices-Adventures-in-Wonderland.jpg"
@@ -540,7 +547,7 @@
     },
 
     {
-        "pk":28,
+        "pk":27,
         "model":"products.product",
         "fields":{
             "isbn":"141439564",
@@ -553,6 +560,7 @@
             "professional_endorsement":"",
             "price":16.45,
             "category":2,
+            "rating":3.77,
             "publisher":"Penguin Books",
             "image_url":"https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9780/1410/9780141040363.jpg",
             "image":"Great-Expectations.jpg"

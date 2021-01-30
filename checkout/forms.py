@@ -1,5 +1,5 @@
 from django import forms
-from .models import Order, Rating, RATING_CHOICES
+from .models import Order
 
 
 class OrderForm(forms.ModelForm):
@@ -35,12 +35,3 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
                 self.fields[field].widget.attrs['class'] = 'stripe-style-input'
                 self.fields[field].label = False
-
-
-class RateForm(forms.ModelForm):
-    rate = forms.ChoiceField(
-        choices=RATING_CHOICES, widget=forms.Select(), required=True)
-
-    class Meta:
-        model = Rating
-        fields = ("rate",)

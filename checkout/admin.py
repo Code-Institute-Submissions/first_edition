@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem, Review, Rating
-
-
-admin.site.register(Rating)
+from .models import Order, OrderLineItem, Review
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
