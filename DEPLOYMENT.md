@@ -1,6 +1,6 @@
 # Deployment
 
-### Heroku
+## Heroku
 
 I deployed my website to Heroku under the guidance of Code institutes tutorial on how to do so. I will explain this process thoroughly in these steps:
 
@@ -192,3 +192,16 @@ a "git push" to check if you performed these steps correctly. Your site should h
 
 5. Go to S3  and click create folder and call it media. Click upload and then select all your websites images (I suggest having them in one folder first to make this easier), then click next and select grant public 
 read access to these objects. Keep clicking next until you get to upload and then click it.
+
+
+## Running the code in gitpod
+
+For this website to be fully functional, you will need to download the following packages from the console using the "pip3 install" and then a space with the package name. Here are the following packages I used, excluding the above packages needed for Heroku:
+ 
+| django  | 
+| django-allauth  | 
+| pillow | 
+| stripe | 
+| crispy=forms | 
+| E | 
+| E | 
