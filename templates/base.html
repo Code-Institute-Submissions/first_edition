@@ -33,8 +33,8 @@
             </div>
             <div class="col-lg-4 col-md-12 center-searchbar-md  py-2">
                <div class="input-group center-searchbar-lg ">
-                  <form onsubmit="event.preventDefault();" role="search" method="GET" action="{% url 'products' %}" class="search-form">
-                     <input id="search" class="search-input" type="search" placeholder="Search all Products" autofocus required />
+                  <form  method="GET" action="{% url 'products' %}" class="search-form">
+                     <input id="search" class="search-input" type="search" name="q" placeholder="Search all Products" autofocus required />
                      <button type="submit" class="search-button">Go</button>    
                   </form>
                </div>

@@ -27,7 +27,9 @@ with a new account. If they user is already logged in with an account, they can 
 click on the sign in link and you will be redirected to the homepage. If you have forgotten your password, you can click on the Forgot password link below the form. From there, you enter your registered email address and click on the reset password button. Check your
 email and then click on the link. You now have the option to create a new password. Upon doing so, you will now be logged in to your profile.
 
-**As a user, I want to update my profile details:** First off, make sure you are signed in. Next, click on the register 
+**As a user, I want to update my profile details:** First off, make sure you are signed in. Next, click on the register
+
+**As a user, I want to be able to search for a product:** At the top middle of the page in the navbar, click on the searchbar and type the name of the product or part of the description. You should see the search results on a new page.
 
 **As a user, I want to buy a product:** The user can select a product from either the highly rated products (4+ stars) from the home page, clicking on the buttons next to the highly rated products, or clicking on the products nav link and selecting the category they want. From there, they
 can click on the product image or name and will be able to add the prouduct to their bag. On the same page, They can adjust the quantity by typing the amount or using the up/down buttons. From here, they can click on the toast button "Go to Checkout" on the right hand side or the nav link 
