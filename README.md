@@ -41,7 +41,7 @@ button. By clicking on the bag nav link in the very top right hand side, you'll 
 saved for later table.
 
 **As a user, I want to check my order history:** If you dont have an account, you can check this by filtering your email to ____ and then you'll see any confirmation emails you have. This is also available to users with an account but they have the option 
-to check all their orders on one webpage. Assuming they're logged in, they can click on my account nav link and select the order history dropdown link. From here, they'll see every single order they've ever made on ________
+to check all their orders on one webpage. Assuming they're logged in, they can click on my account nav link and select the order history dropdown link. From here, they'll see every single order they've ever made.
 
 **As an admin, I want to be able to create a new product:** First, you must log in as an admin, I've created an admin account which you can login as the username "admin" and password "12345". After that, you can use the django administration by appending 
 "/admin" onto the homepage (alternatively you can login from this screen) and then clicking on products, then add new product in the top right. The entry criteria for the fields can be seen in products/models.py. There is an even easier way to do this.

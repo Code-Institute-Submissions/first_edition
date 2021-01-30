@@ -4,6 +4,7 @@ from .models import Order, OrderLineItem, Review, Rating
 
 admin.site.register(Rating)
 
+
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)

@@ -145,28 +145,6 @@ def add_comment(request, product_id):
 
 
 @login_required
-def edit_comment(request, product_id):
-    url = request.META.get('HTTP_REFERER')
-    product = get_object_or_404(Product, pk=product_id)
-    review = Review.objects.filter(product=product_id)
-    user_session = UserProfile.objects.get(user=request.user)
-    print("review")
-
-    return HttpResponseRedirect(url)
-
-
-@login_required
-def delete_comment(request, product_id):
-    if not request.user.is_superuser:
-        messages.error(request, "Sorry, only store owners can do that.")
-        return redirect(reverse("home"))
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
-
-
-@login_required
 def rate(request, product_id):
     """ view that allows to rate a product, similiar to reveiw """
     redirect_url = request.POST.get('redirect_url')
