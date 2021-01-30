@@ -145,29 +145,6 @@ def add_comment(request, product_id):
 
 
 @login_required
-def rate(request, product_id):
-    """ view that allows to rate a product, similiar to reveiw """
-    redirect_url = request.POST.get('redirect_url')
-    product = Product.objects.get(id=product_id)
-    if request.method == 'POST':
-        form = RateForm(request.POST)
-        if form.is_valid():
-            profile = UserProfile.objects.get(user=request.user)
-            rate = form.save(commit=False)
-            rate.user = profile
-            rate.produt = product
-            rate.save()
-            messages.success(
-                request, 'You have successfully rated this product.')
-            return redirect(
-                reverse('product_detail', args=[product_id]))
-        else:
-            form = RateForm()
-
-    return redirect(redirect_url)
-
-
-@login_required
 def add_product(request):
     """ Allows the functionality of a superuser
      addinng products to the website

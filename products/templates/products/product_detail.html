@@ -58,13 +58,7 @@
         </div>
          <div class="row pt-3">
             <div class="col-12 grey">
-               <form method="POST" action="{% url 'rate' product.id %}" class="">
-                  {% csrf_token %}
-                  <div class="input-field col s12">
-                     {{ form }}
-                     <button type="submit" name="action" class="button-style">Submit Rating</button>
-                  </div>
-               </form>
+            
                <div class="pt-2">
                   {% if review|length > 0 %}
                   <a href="{% url 'view_comments' product.id %}">See reviews ({{ review|length }}) available</a>
