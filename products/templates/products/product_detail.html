@@ -65,14 +65,14 @@
          </div>
          <div class="row pt-3">
             <div class="col-12 grey">
-         {% if request.user.is_superuser %}
-                           <small>
-                           <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                           <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                           </small>
-                           {% endif %}
-                           </div>
-                        </div>
+               {% if request.user.is_superuser %}
+               <small>
+               <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+               <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+               </small>
+               {% endif %}
+            </div>
+         </div>
          <div class="row">
             <div class="col-12 grey pt-5">
                <h4 class="product-detail-txt mt-4">Description</h4>

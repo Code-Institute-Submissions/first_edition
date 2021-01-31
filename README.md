@@ -17,6 +17,8 @@ will stick with them as long as the site cookies aren't deleted.
 The admin account has the username of "admin" and password of "12345". They have access to CRUD operations with products directly on the website and even more functionality through Django administration such as checking the sites userbase and orders that are 
 made throughout the website. It can be accessed by appending "/admin" onto the homepage. 
 
+I used user stories to help develop my website. You can check them out[here.](https://ibb.co/wKZzPxv)
+
 
 # UX 
 
@@ -99,7 +101,7 @@ Below are some Wireframes for products.html:
 **Renders all of the products information:** More information will be displayed on this page, including its Format, its ISBN, Description, length, publisher and an optional professional endorsement will be rendered if there is one.
 
 **Customers reviews:** If there is a customer review (I have reviewed the book "Dune", the rest of the products have no reviews) then it will be displayed at the bottom of the page. If you're logged in and ordered the book yourself, you can also
-review the product.
+review the product from the product detail template.
 
 **Has the means to buy the product:** There is a button to add the product to your shopping bag, which is the first step to actually purchasing it. The quantity can also be picked between 1-99 just above this button. If you're interested in the product but unsure if you'll buy it, you can click save for later and it'll
 be on the same page as the shopping bag, just underneath.
@@ -140,7 +142,7 @@ Below are some Wireframes for checkout.html:
 
 ### On the My accounts templates
 
-**Profile Details:** 
+**Profile Details:** Here, you're able to change your shipping address details.
 
 
 **Order History:** Under the my account dropdown in the navigation link, the user can open a separate template to view their order history. All their orders will appear here.
@@ -161,7 +163,8 @@ if two users bought something at the same time, it would create a problem.
 **Different formats for certain books:** I also wanted to make it so that some books would have multiple formats, such as a paperback and hardback. They would require a different price image and ISBN to its counterpart. When I asked my mentor, I was 
 told due to time constraints it probably wouldn't be worth adding this feature.
 
-**Implementing a rating system:**
+**Implementing a rating system:** You can see throuhg my commits that I first started a rating system with stars using javascript, I couldn't get it to be fully functional though so I scrapped it for a simplier one. In the end, I wasn't happy with this 
+variation either, so I had it removed entirely altogether. Given more time, I would have commited having a meaningful user based rating system on my website. The functionality would actually be similiar to Reviews, which I have showcased that I could do.
 
 
 

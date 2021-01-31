@@ -8,12 +8,12 @@ I deployed my website to Heroku under the guidance of Code institutes tutorial o
 (should ideally call it the same name as your website) and pick a region closest to you. Afterwards, click on the resources tab and then under addons type in postgres and click on the result.
 You can use the free plan for the purposes of this demostration.
 
-2. In order to use Postgres, you must install dj_database_url and psycopg2, unicorn, boto3 adn django-storeages.. Type into the console on git "pip3 install psycopg2-binary", "pip3 install dj_database_url" and
+2. In order to use Postgres, you must install dj_database_url and psycopg2, unicorn, boto3 and django-storages.. Type into the console on git "pip3 install psycopg2-binary", "pip3 install dj_database_url" and
 "pip3 install unicorn" and also "pip3 install boto3" and "pip3 install django-storages" . Make a requirements.txt file by typing "pip3 freeze > requirements.txt". add "storages" to installed apps in settings.py to allow django storages
 to function.
 
 3. Go back to Heroku and get your database url. It can be found in the settings tab hidden behind Config vars.
-Now on gitpod, in the settings.py file, import dj_database_url. Scroll down and find the database setting (which should be marked by a comment) and comment out the orignal code.  Instead, Type the following:
+Now on gitpod, in the settings.py file, import dj_database_url. Scroll down and find the database setting (which should be marked by a comment) and comment out the original code.  Instead, Type the following:
 
 
 ```python 
@@ -67,7 +67,7 @@ heroku.
 * EMAIL_HOST_PASS
 
 To get the stripe Public and Secret key, sign into stripe and in your dashboard you'll find them under get test API keys. You need to create a webhook endpoint to get the WH_SECRET so go to the developers menu on the left hand side
-of the stripe dashboard, click add endpoint in the top right, give it the url of your heroku app (you can find it ____ ) , and append "/checkout/wh" (in the case of my website), select recieve all events and then add endpoint.
+of the stripe dashboard, click add endpoint in the top right, give it the url of your heroku app (you can find it ____ ) , and append "/checkout/wh" (in the case of my website), select receive all events and then add endpoint.
 The signing secret is now hidden behind a button, put this value into the heroku config vars. Email Host pass comes from your email app you created with gmail, enter the 16 digit password as its value.
 
 9. Make sure in settings.py that all of your config variables here match the ones in settings.py. I also recommend sending a test webhook to the new endpoint to see if its functional.
@@ -76,14 +76,14 @@ The signing secret is now hidden behind a button, put this value into the heroku
 
 Amazon web services is a cloud based storage service which is used to host our static and media files. I will show you how I used it to help with my deployment:
 
-1. Go to [aws.amazon.com](https://aws.amazon.com/) and click on create AWS account in the top right. Fill out the details including your card details, you wont be chaged with a small website like this one. You must confirm your email 
+1. Go to [aws.amazon.com](https://aws.amazon.com/) and click on create AWS account in the top right. Fill out the details including your card details, you wont be charged with a small website like this one. You must confirm your email 
 and then your account will be set up.
 
 2. Go back to the website and sign in. Now, under the my account tab, click on AWS management console. Type s3 into the searchbar and then click on s3.
 
-3. Click create bucket, name it, select region close to you, untick block all public access, tick aclknowdge that it will be public and click on create bucket.
+3. Click create bucket, name it, select region close to you, untick block all public access, tick acknowledge that it will be public and click on create bucket.
 
-3. On the properities tab, click on static website hosting, use bucket to host a website, fill in the default values for index and error documents (that is, index.html and error.html) and click save.
+3. On the properties tab, click on static website hosting, use bucket to host a website, fill in the default values for index and error documents (that is, index.html and error.html) and click save.
 
 4. On the permissions tab, click CORS configuration and paste in this and click save:
 
@@ -104,7 +104,7 @@ and then your account will be set up.
 
 5. Next in the Bucket Policy tab (still inside permissions) select policy generator. In the new tab, select the policy type S3 bucket Policy, type a star (*) into the Principal field (which will allow all principals) and for the actions tab,
 scroll down to "GetObject" and tick it. For the ARN field, you want to back to Permissions/Bucket policy on a different tab/window and then copy the arn on page. Afterwards, paste the value into the field. It should have a value of something
-like "arn:aws:s3:::BUCKET_NAME_HERE" . With that done, click add statement, generate policy, then copy the policy and paste it into the Buckey Policy tab where you got the ARN value. You want to add a * onto the end of the resource value just After
+like "arn:aws:s3:::BUCKET_NAME_HERE" . With that done, click add statement, generate policy, then copy the policy and paste it into the Bucket Policy tab where you got the ARN value. You want to add a * onto the end of the resource value just After
 the forward slash but before the comma. Click save.
 
 6. Go to access control List tab. Under Public access, click everyone and then in the pop up click list objects and then save.
@@ -115,9 +115,9 @@ Users are required to access the s3 bucket you just created. I will show you how
 
 1. On the top navigation bar, click services and look for IAM, it will be under "Security, Identity, & compliance" or type it into the searchbar.
 
-2. A group will be required to house ther user. On the Left hand side under access management, click groups, create new and call it whatever you want. Click next, next and then create group.
+2. A group will be required to house there user. On the Left hand side under access management, click groups, create new and call it whatever you want. Click next, next and then create group.
 
-3. A policy is require dto access your bucket. So on the left hand side dashboard under Access management, click Policies, then create policy. Click import managed policy and then look for for "AmazonS4FullAccess" and then import.
+3. A policy is required to access your bucket. So on the left hand side dashboard under Access management, click Policies, then create policy. Click import managed policy and then look for for "AmazonS4FullAccess" and then import.
 
 4. Leave this tab open and on another tab back to S3's bucket policy page and grab the ARN again. Paste it in twice in resource and add a * at the end of the second one, it looked like this in my case:
 
@@ -129,10 +129,10 @@ Users are required to access the s3 bucket you just created. I will show you how
 
 6. Go to groups, click on the group name you just created and then attach policy. Find the policy you made a minute ago and click attack policy.
 
-7. Now to put a user inside this group. Under Access Management on the left hand side, click add User, give it a name (I called mine First-edition-staticfiles-user), tick programatic access and then next permissions. To add the user 
+7. Now to put a user inside this group. Under Access Management on the left hand side, click add User, give it a name (I called mine First-edition-staticfiles-user), tick programmatic access and then next permissions. To add the user 
 to the group, just tick the group and then next several times until you create the user.
 
-8. You'll land on a success page saying that the user creation was successful. This page will also have a download .csv button. It's very important that you keep this file as it has the access and secret accss key thats required for
+8. You'll land on a success page saying that the user creation was successful. This page will also have a download .csv button. It's very important that you keep this file as it has the access and secret access key that's required for
 your heroku variables.
 
 
@@ -147,7 +147,7 @@ if 'USE_AWS' in os.environ:
 
     AWS_STORAGE_BUCKET_NAME = # The name of the bucket you created prior
     AWS_S3_REGION_NAME = # Pick the region you used when creating your bucket, go back to S3 bucket if you forgot its value.
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') # These two are from your csv values that are retrived from your heroku config variables, we will fill them out afterwards
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') # These two are from your csv values that are retreived from your heroku config variables, we will fill them out afterwards
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
@@ -188,7 +188,7 @@ class MediaStorage(S3Boto3Storage):
 
 4. Add the AWS keys to your config vars on heruku under the settings tab. Remember, you get these values from the .csv file you saved earlier! Make sure they match the variable name in your settings.py file, I called them
 "AWS_ACCESS_KEY_ID" and "AWS_SECRET_ACCESS_KEY". Also, add "USE_AWS" and set it to true! Finally, delete the "DISABLE_COLLECTSTATIC" as you will be uploading your static files through AWS now. You should do a "git add .", a commit and 
-a "git push" to check if you performed these steps correctly. Your site should have its css working and next we wil work on Images.
+a "git push" to check if you performed these steps correctly. Your site should have its css working and next we will work on Images.
 
 5. Go to S3  and click create folder and call it media. Click upload and then select all your websites images (I suggest having them in one folder first to make this easier), then click next and select grant public 
 read access to these objects. Keep clicking next until you get to upload and then click it.
@@ -204,7 +204,7 @@ For this website to be fully functional, you will need to download the following
 * dj-database-url
 * Django
 * django-allauth
-* django-countri
+* django-countries
 * django-crispy-forms
 * django-storages
 * gunicorn
