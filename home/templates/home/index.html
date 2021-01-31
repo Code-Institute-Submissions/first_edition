@@ -32,7 +32,7 @@
       <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
          <div class="row">
             <div class="col-7 col-md-8 col-lg-9">
-               <p class="roboto index-book-selection-font">10 Best Sellers in The First Edition</p>
+               <p class="roboto index-book-selection-font">Best Sellers in The First Edition</p>
             </div>
             <div class="col-5 col-md-4 col-lg-3">
                <a class="btn button-style mb-3 hvr-float-shadow text-align-right" href="{% url 'products' %}?category=bestsellers" role="button">View all ({{ product_bestsellers|length }} books available)</a>
@@ -44,7 +44,7 @@
       <div class="col-xl-6 offset-xl-3  col-lg-8 offset-lg-2 col-md-10 offset-md-1">
          <div class="scroll-img-container padding-10 grey">
             {% for product in product_bestsellers %}
-            <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
+            <a href="{% url 'product_bestsellers' %}" class="hvr-grow-shadow">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index">
             </a>
             {% endfor %}
@@ -69,9 +69,11 @@
       <div class="col-xl-6 offset-xl-3  col-lg-8 offset-lg-2 col-md-10 offset-md-1">
          <div class="scroll-img-container padding-10 grey">
             {% for product in product_fiction %}
+                {% if product.rating > 4.00 %}
             <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
             </a>
+                {% endif %}
             {% endfor %}
          </div>
       </div>
@@ -94,9 +96,11 @@
       <div class="col-xl-6 offset-xl-3  col-lg-8 offset-lg-2 col-md-10 offset-md-1">
          <div class="scroll-img-container padding-10 grey">
             {% for product in product_history %}
+                {% if product.rating > 4.00 %}
             <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
             </a>
+                {% endif %}
             {% endfor %}
          </div>
       </div>
@@ -119,9 +123,11 @@
       <div class="col-xl-6 offset-xl-3  col-lg-8 offset-lg-2 col-md-10 offset-md-1">
          <div class="scroll-img-container padding-10 grey">
             {% for product in product_philosophy %}
+                 {% if product.rating > 4.00 %}
             <a href="{% url 'product_detail' product.id %}" class="hvr-grow-shadow">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="index-book-margin product-height-index ">
             </a>
+                {% endif %}
             {% endfor %}
          </div>
       </div>

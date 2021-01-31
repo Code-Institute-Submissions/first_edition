@@ -89,10 +89,11 @@ def product_detail(request, product_id):
     review = Review.objects.filter(product=product_id)
     is_buyer = False
     lines = OrderLineItem.objects.filter(product=product)
-    for line in lines:
-        order = line.order
-        if order.user_profile == request.user.userprofile:
-            is_buyer = True
+    if request.user.is_authenticated:
+        for line in lines:
+            order = line.order
+            if order.user_profile == request.user.userprofile:
+                is_buyer = True
 
     context = {
         "product": product,

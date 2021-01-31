@@ -28,7 +28,7 @@ DATABASES  = {
 Type "python3 manage.py loaddata categories" and then "python3 manage.py loaddata products" (the order is important as products depend on categories). I recommend creating a superuser now while you're still connected to Postgres
 by typing "python3 manage.py createsuperuser" and then following the instructions in the console.
 
-5.  Although not a necessary step, I recommend keeping your postgres url out of version control. You can do so by typing the following into settings.py:
+5.  Although not a 100% necessary step, I recommend keeping your postgres url out of version control. You can do so by typing the following into settings.py:
 
 ```python 
 
@@ -61,10 +61,10 @@ heroku.
 
 8. In the settings tab, reveal config variables and add in the values for the following variables:
 
-| STRIPE_PUBLIC_KEY  | 
-| STRIPE_SECRET_KEY  | 
-| STRIPE_WH_SECRET  | 
-| EMAIL_HOST_PASS  | 
+* STRIPE_PUBLIC_KEY
+* STRIPE_SECRET_KEY
+* STRIPE_WH_SECRET
+* EMAIL_HOST_PASS
 
 To get the stripe Public and Secret key, sign into stripe and in your dashboard you'll find them under get test API keys. You need to create a webhook endpoint to get the WH_SECRET so go to the developers menu on the left hand side
 of the stripe dashboard, click add endpoint in the top right, give it the url of your heroku app (you can find it ____ ) , and append "/checkout/wh" (in the case of my website), select recieve all events and then add endpoint.
@@ -138,7 +138,7 @@ your heroku variables.
 
 ### Connecting Django to AWS
 
-1. In settings.py, type the following code and fill in the values applicable to you:
+1. In settings.py, type the following code and fill in the values applicable to you (of course, I have already taken this step in this project):
 
 
 ```python 
@@ -196,12 +196,29 @@ read access to these objects. Keep clicking next until you get to upload and the
 
 ## Running the code in gitpod
 
-For this website to be fully functional, you will need to download the following packages from the console using the "pip3 install" and then a space with the package name. Here are the following packages I used, excluding the above packages needed for Heroku:
+For this website to be fully functional, you will need to download the following packages from the console using the "pip3 install" and then a space with the package name. Here are the following packages I used, including the above packages needed for Heroku:
  
-| django  | 
-| django-allauth  | 
-| pillow | 
-| stripe | 
-| crispy=forms | 
-| E | 
-| E | 
+* asgiref
+* boto3
+* botocore
+* dj-database-url
+* Django
+* django-allauth
+* django-countri
+* django-crispy-forms
+* django-storages
+* gunicorn
+* jmespath
+* oauthlib
+* Pillow
+* psycopg2-binary
+* PyJWT
+* python3-openid
+* pytz
+* requests-oauthlib
+* s3transfer
+* sqlparse
+* stripe
+
+These are all found in the requirements.txt file. Lastly, you will need to run "python3 manage.py runserver" and then clicking on open browser on the bottom right(make sure its port 8000). You may need to set DEBUG = True 
+in settings.py in order for the static files to appear.
